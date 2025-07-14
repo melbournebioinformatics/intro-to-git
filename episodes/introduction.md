@@ -59,7 +59,7 @@ sets of changes on the same document.
 ![](fig/versions.svg){alt='A diagram with one source document that has been modified in two different ways to produce two different versions of the document'}
 
 Unless multiple users make changes to the same section of the document - a 
-[conflict](#glossary) - you can
+[conflict](../learners/reference.md#glossary) - you can
 incorporate two sets of changes into the same base document.
 
 ![](fig/merge.svg){alt='A diagram that shows the merging of two different document versions into one document that contains all of the changes from both versions'}
@@ -67,9 +67,9 @@ incorporate two sets of changes into the same base document.
 A version control system is a tool that keeps track of these changes for us,
 effectively creating different versions of our files. It allows us to decide
 which changes will be made to the next version (each record of these changes is
-called a [commit](#glossary), and keeps useful metadata
+called a [commit](../learners/reference.md#glossary), and keeps useful metadata
 about them. The complete history of commits for a particular project and their
-metadata make up a [repository](#glossary).
+metadata make up a [repository](../learners/reference.md#glossary).
 Repositories can be kept in sync across different computers, facilitating
 collaboration among different people.
 
