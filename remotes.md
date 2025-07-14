@@ -1,6 +1,6 @@
 ---
 title: 'Remotes: pushing and pulling'
-teaching: 10
+teaching: 20
 exercises: 0
 ---
 

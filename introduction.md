@@ -1,6 +1,6 @@
 ---
 title: "Introduction to Git"
-teaching: 10
+teaching: 20
 exercises: 1
 ---
 
