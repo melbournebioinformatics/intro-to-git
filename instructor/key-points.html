@@ -316,7 +316,7 @@
 <div class="accordion accordion-flush" id="accordionFlush8">
   <div class="accordion-item">
     <div class="accordion-header" id="flush-heading8">
-        <a href="collaborating-with-git.html">7. Collaborating with Git</a>
+        <a href="cloning.html">7. Collaborating with Git</a>
     </div>
 <!--/div.accordion-header-->
 
@@ -328,7 +328,19 @@
 <div class="accordion accordion-flush" id="accordionFlush9">
   <div class="accordion-item">
     <div class="accordion-header" id="flush-heading9">
-        <a href="tips-and-best-practices.html">8. Tips and best practices</a>
+        <a href="forking.html">8. Collaborating with Git</a>
+    </div>
+<!--/div.accordion-header-->
+
+  </div>
+<!--/div.accordion-item-->
+</div>
+<!--/div.accordion-flush-->
+
+<div class="accordion accordion-flush" id="accordionFlush10">
+  <div class="accordion-item">
+    <div class="accordion-header" id="flush-heading10">
+        <a href="tips-and-best-practices.html">9. Tips and best practices</a>
     </div>
 <!--/div.accordion-header-->
 
@@ -464,17 +476,32 @@ repository to the newest updates on the remote.</li>
 <li>The <code>git remote</code> command is used to manage remotes, such
 as setting the GitHub URL, to view the configured remotes, and other
 actions.</li>
-</ul></section><section id="collaborating-with-git"><h2 class="section-heading"><a href="collaborating-with-git.html">Collaborating with Git</a></h2>
+</ul></section><section id="cloning"><h2 class="section-heading"><a href="cloning.html">Collaborating with Git</a></h2>
 <hr class="half-width">
 <ul>
-<li>Use <code>.md</code> files for episodes when you want static
-content</li>
-<li>Use <code>.Rmd</code> files for episodes when you need to generate
-output</li>
-<li>Run <code>sandpaper::check_lesson()</code> to identify any issues
-with your lesson</li>
-<li>Run <code>sandpaper::build_lesson()</code> to preview your lesson
-locally</li>
+<li>
+<code>git clone</code> copies a remote repository to our local
+repository.</li>
+<li>There are multiple ways to revert to previous changes, one of them
+is <code>git reset</code>.</li>
+<li>
+<code>HEAD</code> indicates the current state of the
+repository.</li>
+<li>We cannot push to a remote repository if we do not have access to
+it.</li>
+</ul></section><section id="forking"><h2 class="section-heading"><a href="forking.html">Collaborating with Git</a></h2>
+<hr class="half-width">
+<ul>
+<li>
+<code>git clone</code> copies a remote repository to our local
+repository.</li>
+<li>There are multiple ways to revert to previous changes, one of them
+is <code>git reset</code>.</li>
+<li>
+<code>HEAD</code> indicates the current state of the
+repository.</li>
+<li>We cannot push to a remote repository if we do not have access to
+it.</li>
 </ul></section><section id="tips-and-best-practices"><h2 class="section-heading"><a href="tips-and-best-practices.html">Tips and best practices</a></h2>
 <hr class="half-width">
 <ul>
