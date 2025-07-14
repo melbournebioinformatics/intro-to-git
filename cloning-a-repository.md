@@ -1,6 +1,6 @@
 ---
 title: 'Cloning a repository'
-teaching: 10
+teaching: 20
 exercises: 2
 ---
 
@@ -14,9 +14,9 @@ exercises: 2
 
 ::::::::::::::::::::::::::::::::::::: objectives
 
-- Learn how to *clone* a repository and the `git clone` command.
-- Learn how to *pull* changes and the `git pull` command.
-- Learn how to revert a change that was made and broke the code.
+- *Clone* a repository and the `git clone` command.
+- *Pull* changes and the `git pull` command.
+- Revert a change that was made and broke the code.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
