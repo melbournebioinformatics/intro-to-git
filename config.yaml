@@ -7,7 +7,7 @@
 # mb: Melbourne Bioinformatics
 # mig: Melbourne Integrative Genomics
 # wehi: Walter and Eliza Hall Institute
-carpentry: 'uom'
+carpentry: 'mb'
 
 # Alt-text description of the lesson.
 carpentry_description: 'Lesson Description'
@@ -60,17 +60,17 @@ contact: 'fixme@fixme.org' # FIXME
 # - another-learner.md
 
 # Order of episodes in your lesson
-episodes: 
+episodes:
 - introduction.md
 
 # Information for Learners
-learners: 
+learners:
 
 # Information for Instructors
-instructors: 
+instructors:
 
 # Learner Profiles
-profiles: 
+profiles:
 
 # Customisation ---------------------------------------------
 #
