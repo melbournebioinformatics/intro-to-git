@@ -20,7 +20,7 @@ carpentry: 'mb'
 title: 'Version Control with Git'
 
 # Date the lesson was created (YYYY-MM-DD, this is empty by default)
-created: 2024-10-01
+created: '2024-10-01'
 
 # Comma-separated list of keywords for the lesson
 keywords: 'software, github, data management, best practices'
@@ -66,6 +66,7 @@ contact: 'vinicius.salazar@unimelb.edu.au'
 # Order of episodes in your lesson
 episodes: 
 - introduction.md
+- why-use-git.md
 - your-first-git-repository.md
 - collaborating-with-git.md
 - tips-and-best-practices.md
@@ -85,6 +86,7 @@ profiles:
 # sandpaper and varnish versions) should live
 
 
-carpentry_description: Version control with Git for researchers. Learn how to manage coding projects using best practices.
+carpentry_description: Version control with Git for researchers. Learn how to manage
+  coding projects using best practices.
 varnish: melbournebioinformatics/uom-varnish@main
 url: melbournebioinformatics.github.io/uom-varnish

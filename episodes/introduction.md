@@ -1,22 +1,20 @@
 ---
 title: "Introduction to Git"
-teaching: 40
-exercises: 2
+teaching: 10
+exercises: 1
 ---
 
 :::::::::::::::::::::::::::::::::::::: questions 
 
 - What is Git?
-- Why use version control?
-- What are the fundamental concepts of version control?
+- What problem does it solve?
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
 ::::::::::::::::::::::::::::::::::::: objectives
 
-- Understand what Git is, and what is used for.
-- Understand the benefits of Git in everyday life as a researcher.
-- Understand the fundamental concepts of Git, such as commits, remotes, and the staging area.
+- Understand what Git is, and what it is used for.
+- Understand some of its features that make it so attractive.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
