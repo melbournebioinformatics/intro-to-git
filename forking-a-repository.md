@@ -1,5 +1,5 @@
 ---
-title: 'Collaborating with Git'
+title: 'Forking a repository'
 teaching: 10
 exercises: 2
 ---
