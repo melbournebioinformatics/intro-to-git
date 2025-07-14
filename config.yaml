@@ -71,8 +71,8 @@ episodes:
 - your-first-git-repository.md
 - tracking-changes.md
 - remotes.md
-- cloning.md
-- forking.md
+- cloning-a-repository.md
+- forking-a-repository.md
 - tips-and-best-practices.md
 
 # Information for Learners
