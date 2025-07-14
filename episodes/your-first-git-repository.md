@@ -1,6 +1,6 @@
 ---
 title: 'Your first Git repository'
-teaching: 10
+teaching: 20
 exercises: 1
 ---
 
