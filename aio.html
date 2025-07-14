@@ -1560,11 +1560,12 @@ any links that you are not going to use.
 <div class="inner bordered">
 <h3 class="card-title">Objectives</h3>
 <ul>
-<li>Learn how to <em>clone</em> a repository and the
-<code>git clone</code> command.</li>
-<li>Learn how to <em>pull</em> changes and the <code>git pull</code>
+<li>
+<em>Clone</em> a repository and the <code>git clone</code>
 command.</li>
-<li>Learn how to revert a change that was made and broke the code.</li>
+<li>
+<em>Pull</em> changes and the <code>git pull</code> command.</li>
+<li>Revert a change that was made and broke the code.</li>
 </ul>
 </div>
 </div>
@@ -1991,13 +1992,168 @@ any links that you are not going to use.
 <h3 class="card-title">Objectives</h3>
 <ul>
 <li>Fork a repository and make changes to it.</li>
-<li>Fix a merge conflict.</li>
+<li>Fix a merge conflict in your fork.</li>
 </ul>
 </div>
 </div>
 </div>
 </div>
 </div>
+<p>When we <strong>clone</strong> a repository, we download a copy of it
+locally, attached to the same remote (the GitHub repository) from which
+we cloned it from. We can make whatever changes we want locally, but in
+order to push those changes to the remote, we must have access to the
+GitHub repository. Unless it’s our own repository or the owner of the
+repository has granted us with write access, we usually won’t have
+access to it. To circumvent this problem, we should <a href="#glossary">fork</a> the repository. Forking a repository is
+similar to cloning, but we create a new <strong>remote</strong>, instead
+of a local copy, that we have control over.</p>
+<p>Let’s <strong>fork</strong> the chosen repository and make changes to
+it.</p>
+<div id="checklist1" class="callout checklist">
+<div class="callout-square">
+<i class="callout-icon" data-feather="check-square"></i>
+</div>
+<div class="callout-inner">
+<h3 class="callout-title">Checklist</h3>
+<div class="callout-content">
+<p>To fork a repository, navigate to the repository page on GitHub and
+click the “Fork” button on the top-right:</p>
+<figure><img src="fig/fork_button.png" class="figure mx-auto d-block"></figure><p>You will be taken to the fork page. There’s no need to change
+anything here, but make sure you are forking it with your profile as the
+“Owner”:</p>
+<figure><img src="fig/fork_page.png" class="figure mx-auto d-block"></figure><figure><img src="fig/fork_loading.png" class="figure mx-auto d-block"></figure><p>Now you have your own copy of the repository, that you have total
+control over! Notice that the top-left shows that the repository was
+forked from the original repository.</p>
+<figure><img src="fig/forked_repository.png" class="figure mx-auto d-block"></figure>
+</div>
+</div>
+</div>
+<p>Now, there are two ways to configure your local repository so that it
+follows your <strong>fork</strong>, rather than the original
+repository:</p>
+<div class="tabs">
+<nav><div id="nav-tab-1" class="nav nav-tabs" role="tablist">
+<button class="nav-link active" id="nav-tab-1-1" data-bs-toggle="tab" data-bs-target="#nav-tabpanel-1-1" type="button" role="tab" aria-controls="nav-tabpanel-1-1" aria-selected="true">
+  <h3 class="tab-header" id="nav-tab-heading-1-1">
+  Deleting and re-cloning
+  </h3>
+</button>
+<button class="nav-link" id="nav-tab-1-2" data-bs-toggle="tab" data-bs-target="#nav-tabpanel-1-2" type="button" role="tab" aria-controls="nav-tabpanel-1-2" aria-selected="false">
+  <h3 class="tab-header" id="nav-tab-heading-1-2">
+  Updating the remote
+  </h3>
+</button>
+</div>
+</nav><div id="nav-tabContent-1" class="tab-content">
+<div id="nav-tabpanel-1-1" class="tab-pane show active" aria-labelledby="nav-tab-1-1" role="tabpanel">
+<p>Simply delete the local repository (with the
+<code>rm -rf &lt;DIRECTORY_NAME&gt;</code> or right-click the directory
+and delete it), and clone it again, using the same approach that we used
+before.</p>
+</div>
+<div id="nav-tabpanel-1-2" class="tab-pane" aria-labelledby="nav-tab-1-2" role="tabpanel">
+<p>If you ran the <code>git remote -v</code> command from inside the
+original repository that you cloned, you will have seen that it shows
+the remote URL of the repository, which you do not have access to. You
+can <strong>update</strong> this remote with the following command:
+<code>git remote set-url origin &lt;URL-OF-YOUR-FORK&gt;</code>. The URL
+of your fork is the <strong>same URL</strong> that you use it to clone
+it, which can be obtained by clicking the “Code” button on the GitHub
+interface. Use <code>git remote -v</code> to confirm that the remote has
+been updated.</p>
+</div>
+</div>
+</div>
+<p>Now that your local repository is following the fork, rather than the
+original repository, you can <strong>push</strong> any changes that you
+make locally to the remote. Do this by running
+<code>git push</code>.</p>
+<div class="section level3">
+<h3 id="pull-requests">Pull requests<a class="anchor" aria-label="anchor" href="#pull-requests"></a>
+</h3>
+<p>Even though you don’t have access to the original repository, you can
+submit changes to it through a <a href="#glossary">pull request</a>. A
+pull request is a way of requesting that the owner of the repository
+that you’re submitting the changes to to “merge” (or pull) them into
+their repository.</p>
+<p>Let’s make a pull request with the fix that we made to the original
+repository containing the code. If you haven’t pushed the code after
+committing the fix that you made, do so by running
+<code>git push</code>.</p>
+<div id="checklist2" class="callout checklist">
+<div class="callout-square">
+<i class="callout-icon" data-feather="check-square"></i>
+</div>
+<div class="callout-inner">
+<h3 class="callout-title">Checklist</h3>
+<div class="callout-content">
+<p>To create a pull request, go to the page of your fork on GitHub after
+pushing the fixed code. At the top of the code, there will be a bar
+noting the difference between your fork and the original repository. If
+you click on “Contribute”, you can create a pull request:</p>
+<figure><img src="fig/fork_commit_ahead.png" class="figure mx-auto d-block"></figure><p>After you click that, you will be taken to a screen to create your
+pull request. A default title will be given to your PR, but you can edit
+it if you want, and give it a description. Repositories may have
+different policies regarding the content of the PR, but for this one we
+can just keep it simple and create the pull request:</p>
+<figure><img src="fig/PR_creation_screen.png" class="figure mx-auto d-block"></figure><p>Once you are done, you will have created a pull request from your
+fork into the original repository. It will appear on the “Pull requests”
+tab on the original repository. Authors and maintainers from that
+repository will be able to review your pull request, make comments,
+changes, and eventually merge it.</p>
+<figure><img src="fig/PR_screen.png" class="figure mx-auto d-block"></figure>
+</div>
+</div>
+</div>
+<p>If you have your project available on GitHub, it is likely that you
+will have to review a pull request at some point!</p>
+</div>
+<div class="section level3">
+<h3 id="merge-conflicts">Merge conflicts<a class="anchor" aria-label="anchor" href="#merge-conflicts"></a>
+</h3>
+<p>Because of that, let’s practice <strong>reviewing</strong> a pull
+request, that is, the scenario where someone would submit a pull request
+to our repository.</p>
+<div id="discussion1" class="callout discussion">
+<div class="callout-square">
+<i class="callout-icon" data-feather="message-circle"></i>
+</div>
+<div class="callout-inner">
+<h3 class="callout-title">Challenge</h3>
+<div class="callout-content">
+<p>When a pull request is created that conflicts with your repository,
+the pull request screen should indicate it:</p>
+<figure><img src="fig/PR_screen_conflict.png" class="figure mx-auto d-block"></figure><p>When clicking “Resolve conflicts”, it should bring up a text editor
+where we can edit the conflicting file:</p>
+<figure><img src="fig/PR_conflict_editor.png" class="figure mx-auto d-block"></figure><p>Conflicts on Git always follow this format, where the conflicting
+lines have <code>&lt;&lt;&lt;</code>, <code>===</code>, and
+<code>&gt;&gt;&gt;</code> between them, indicating where the conflict
+happens.</p>
+<p>Erase the lines with <code>&lt;&lt;&lt;</code>,
+<code>&gt;&gt;&gt;</code> and <code>===</code> to fix the conflict. Make
+sure your name is the first line on the file, and the name of
+contributor, the second one. Your file should look like this:</p>
+<p>```output linenums=“1” - User 1 - User 2</p>
+<p>```</p>
+<p>Click on “Resolve conflicts” and “Commit merge”</p>
+<figure><img src="fig/PR_resolved_conflict.png" class="figure mx-auto d-block"></figure><p>This will create a new commit on the pull request:</p>
+<figure><img src="fig/PR_conflict_commit.png" class="figure mx-auto d-block"></figure><p><strong>Don’t merge the pull request just yet!</strong> Let’s finish
+our review first.</p>
+</div>
+</div>
+</div>
+<p>After fixing the conflict, let’s review our pull request. On the pull
+request screen, go to the “Files changed” tab.</p>
+<figure><img src="fig/PR_files_changed.png" class="figure mx-auto d-block"></figure><p>This tab allows us to review each file individually. Check the
+“Viewed” checkbox next to the file, and the “Review changes”. This
+allows you to Comment, Approve or Request changes on the pull request.
+Select Comment or Approve.</p>
+<figure><img src="fig/PR_review_changes.png" class="figure mx-auto d-block"></figure><p>You can now merge the PR:</p>
+<figure><img src="fig/PR_review_merge.png" class="figure mx-auto d-block"></figure><p>After merging, go to your local repository and run
+<code>git pull</code>.</p>
+<p><strong>Well done!</strong> By following this lesson so far, you’ve
+learned the fundamentals of version control with Git.</p>
 <div id="keypoints1" class="callout keypoints">
 <div class="callout-square">
 <i class="callout-icon" data-feather="key"></i>
@@ -2006,19 +2162,26 @@ any links that you are not going to use.
 <h3 class="callout-title">Key Points</h3>
 <div class="callout-content">
 <ul>
-<li>
-<code>git clone</code> copies a remote repository to our local
-repository.</li>
-<li>There are multiple ways to revert to previous changes, one of them
-is <code>git reset</code>.</li>
-<li>
-<code>HEAD</code> indicates the current state of the
-repository.</li>
-<li>We cannot push to a remote repository if we do not have access to
-it.</li>
+<li>Forking a repository creates a new <strong>remote</strong> that we
+have control over.</li>
+<li>We can update the remote on our local repository using
+<code>git remote set-url &lt;REMOTE_NAME&gt; &lt;REMOTE_URL&gt;</code>.</li>
+<li>Pull requests are a way of collaborating that allows other people to
+merge our changes into their repository.</li>
+<li>Conflicts are when two commits modify the same parts of a file. We
+must resolve conflicts before merging them. This can be done by creating
+a new commit.</li>
+<li>Conflicts are denoted by <code>&lt;&lt;&lt;</code>,
+<code>&gt;&gt;&gt;</code> and <code>===</code> characters around the
+conflicting lines.</li>
 </ul>
 </div>
 </div>
+</div>
+<!--
+Place links that you need to refer to multiple times across pages here. Delete
+any links that you are not going to use.
+ -->
 </div></section><section id="aio-tips-and-best-practices"><p>Content from <a href="tips-and-best-practices.html">Tips and best practices</a></p>
 <hr>
 <p>Last updated on 2025-07-14 |
@@ -2035,8 +2198,8 @@ it.</li>
 <div class="inner">
 <h3 class="card-title">Questions</h3>
 <ul>
-<li>How do you write a lesson using R Markdown and
-<a href="https://carpentries.github.io/sandpaper/" class="external-link">sandpaper</a>?</li>
+<li>How do we incorporate Git into our everyday work?</li>
+<li>What are some tips and best practices for working with Git?</li>
 </ul>
 </div>
 </div>
@@ -2046,109 +2209,134 @@ it.</li>
 <div class="inner bordered">
 <h3 class="card-title">Objectives</h3>
 <ul>
-<li>Explain how to use markdown with the new lesson template</li>
-<li>Demonstrate how to include pieces of code, figures, and nested
-challenge blocks</li>
+<li>Learn best practices that help make the most out of Git.</li>
 </ul>
 </div>
 </div>
 </div>
 </div>
 </div>
-<section><h2 class="section-heading" id="introduction">Introduction<a class="anchor" aria-label="anchor" href="#introduction"></a>
-</h2>
-<hr class="half-width">
-<p>This is a lesson created via The Carpentries Workbench. It is written
-in <a href="https://pandoc.org/MANUAL.html" class="external-link">Pandoc-flavored Markdown</a>
-for static files (with extension <code>.md</code>) and <a href="https://rmarkdown.rstudio.com/" class="external-link">R Markdown</a> for dynamic files
-that can render code into output (with extension <code>.Rmd</code>).
-Please refer to the <a href="https://carpentries.github.io/sandpaper-docs/" class="external-link">Introduction to The
-Carpentries Workbench</a> for full documentation.</p>
-<p>What you need to know is that there are three sections required for a
-valid Carpentries lesson template:</p>
-<ol style="list-style-type: decimal">
-<li>
-<code>questions</code> are displayed at the beginning of the episode
-to prime the learner for the content.</li>
-<li>
-<code>objectives</code> are the learning objectives for an episode
-displayed with the questions.</li>
-<li>
-<code>keypoints</code> are displayed at the end of the episode to
-reinforce the objectives.</li>
-</ol>
-<div id="challenge-1-can-you-do-it" class="callout challenge">
-<div class="callout-square">
-<i class="callout-icon" data-feather="zap"></i>
-</div>
-<div id="challenge-1-can-you-do-it" class="callout-inner">
-<h3 class="callout-title">Challenge 1: Can you do it?</h3>
-<div class="callout-content">
-<p>What is the output of this command?</p>
-<div class="codewrapper sourceCode" id="cb1">
-<h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+<p>Next up, let’s look at some tips and best practices to incorporate
+Git into your day-to-day work.</p>
+<div class="section level3">
+<h3 id="how-to-incorporate-git-in-your-day-to-day-work">How to incorporate Git in your day-to-day work<a class="anchor" aria-label="anchor" href="#how-to-incorporate-git-in-your-day-to-day-work"></a>
 </h3>
-<pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="fu">paste</span><span class="op">(</span><span class="st">"This"</span>, <span class="st">"new"</span>, <span class="st">"lesson"</span>, <span class="st">"looks"</span>, <span class="st">"good"</span><span class="op">)</span></span></code></pre>
-</div>
-</div>
-</div>
-</div>
-<div id="accordionSolution1" class="accordion challenge-accordion accordion-flush">
-<div class="accordion-item">
-<button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
-  <h4 class="accordion-header" id="headingSolution1"> Output </h4>
-</button>
-<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
-<div class="accordion-body">
-<div class="codewrapper">
-<h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
-</h3>
-<pre class="output" tabindex="0"><code>[1] "This new lesson looks good"</code></pre>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div id="challenge-2-how-do-you-nest-solutions-within-challenge-blocks" class="callout challenge">
+<p>Adopting Git for beginners can be daunting at first. There are many
+commands to learn, it requires constant interaction with the command
+line, and instead of just pressing “Save”, or “Ctrl+S”, you have to type
+in a message everytime you want to record your work. However, there are
+strategies to mitigate or circumvent these problems.</p>
+<p>One of them is to <strong>think of Git as a digital research
+notebook.</strong> Even if you’re not doing full-blown software
+engineering, but rather just recording a data analysis project, Git is
+very useful in the sense that you can document your work as you execute
+it. Every time you commit a change, you are creating a structured record
+of that change, which is appropriate for data compliance requirements in
+most scenarios. By using Git to record your work, you are not only
+guaranteeing that you will have a back up of your code and the
+possibility of reverting specific changes if something breaks, but also
+creating a digital notebook of the what you have done. By thinking of
+Git like this, you can build up a habit of, for example, committing your
+work at the end of each day, describing what you have done, much like
+you would don on a laboratory notebook.</p>
+<p>The second strategy to <strong>take advantage of existing solutions
+to use Git</strong>. This could mean plugins for your IDE, the <a href="https://desktop.github.com/download/" class="external-link">GitHub Desktop client</a>,
+or other services like <a href="https://www.gitkraken.com/" class="external-link">GitKraken</a>. Git is a
+well-established software with many, many tools that support. Take
+advantage of that instead of struggling with the Git command-line.</p>
+<p>The third strategy is to, at the very least, <strong>to think of Git
+as a backup tool</strong>. Even though you may create backups of your
+code in platforms like Dropbox or Google Drive, you would have to sync
+your backups regularly in other to keep track of an evolving code base.
+By using Git, you can rest assured that you will have a cloud backup of
+your code, and you can rely on it in case your local machine stops
+working.</p>
+<div id="when-to-commit" class="callout">
 <div class="callout-square">
-<i class="callout-icon" data-feather="zap"></i>
+<i class="callout-icon" data-feather="bell"></i>
 </div>
-<div id="challenge-2-how-do-you-nest-solutions-within-challenge-blocks" class="callout-inner">
-<h3 class="callout-title">Challenge 2: how do you nest solutions within challenge blocks?</h3>
+<div id="when-to-commit" class="callout-inner">
+<h3 class="callout-title">When to commit?</h3>
 <div class="callout-content">
-
+<p>It is common for Git beginners to not know exactly <em>when</em> to
+commit their changes. Since commits can be seen as “checkpoints”, a good
+time to commit changes is <strong>when things are working as
+intended.</strong> Are you trying to fix a bug, and the error message
+changed? Even though the code is not fully working, that may be worth a
+commit to record that you are on the right track. When you fix the code
+for certain, it is <em>definitely</em> worth a commit! Don’t wait until
+things break again, because if you haven’t committed your changes when
+the code was working, you won’t be able to revert back to it. If you are
+making big changes to a file, such as writing large chunks of
+documentation, you can split your commits into different sections. For
+example, commit after you have finished drafting the Introduction, and
+then again after you’ve finished drafting the Methodology. You can make
+additional commits later when you are reviewing and editing your
+text.</p>
+<p>When you’re first starting with some new code or making fast progress
+on a project, you don’t have to commit every single line of code
+(although this may be required if you’re submitting changes to a large
+code base!). But it’s important to start developing a feeling of “would
+I want/need to come back to this checkpoint if I had to?”</p>
 </div>
 </div>
 </div>
-<div id="accordionSolution2" class="accordion challenge-accordion accordion-flush">
-<div class="accordion-item">
-<button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution2" aria-expanded="false" aria-controls="collapseSolution2">
-  <h4 class="accordion-header" id="headingSolution2"> Show me the solution </h4>
-</button>
-<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
-<div class="accordion-body">
-<p>You can add a line with at least three colons and a
-<code>solution</code> tag.</p>
+<div class="section level4">
+<h4 id="leveraging-the-github-interface">Leveraging the GitHub interface<a class="anchor" aria-label="anchor" href="#leveraging-the-github-interface"></a>
+</h4>
+<p>In regards to the second strategy of using existing solutions, you
+can do most Git operations very easily through the GitHub web interface.
+GitHub has advanced tremendously over the years, and not only you can do
+most basic operations directly through the interface, it also offers a
+number of features such as the ability to <a href="https://docs.github.com/en/pages" class="external-link">set up web pages</a>; <a href="https://docs.github.com/en/get-started/writing-on-github/working-with-advanced-formatting/autolinked-references-and-urls" class="external-link">autolinked
+references and URLs</a> and <a href="https://docs.github.com/en/issues/tracking-your-work-with-issues/linking-a-pull-request-to-an-issue" class="external-link">linking
+pull requests to issues</a>, which help with project management;
+automated workflows through <a href="https://docs.github.com/en/actions" class="external-link">GitHub Actions</a>, and many
+others.</p>
+</div>
+</div>
+<div class="section level3">
+<h3 id="dos-and-donts">Do’s and Dont’s<a class="anchor" aria-label="anchor" href="#dos-and-donts"></a>
+</h3>
+<div id="checklist1" class="callout checklist">
+<div class="callout-square">
+<i class="callout-icon" data-feather="check-square"></i>
+</div>
+<div class="callout-inner">
+<h3 class="callout-title">Checklist</h3>
+<div class="callout-content">
+<p><strong>Do:</strong></p>
+<ul>
+<li>Write good commit messages
+<ul>
+<li>Say <strong>why</strong>, not <strong>what</strong> you changed</li>
+<li>Document as you code</li>
+</ul>
+</li>
+<li>Make small changes</li>
+<li>Commit often</li>
+<li>Ignore large files (use <code>.gitignore</code>)</li>
+</ul>
 </div>
 </div>
 </div>
+<div id="caution1" class="callout caution">
+<div class="callout-square">
+<i class="callout-icon" data-feather="alert-triangle"></i>
 </div>
-</section><section><h2 class="section-heading" id="figures">Figures<a class="anchor" aria-label="anchor" href="#figures"></a>
-</h2>
-<hr class="half-width">
-<p>You can use pandoc markdown for static figures with the following
-syntax:</p>
-<p><code>![optional caption that appears below the figure](figure url){alt='alt text for accessibility purposes'}</code></p>
-<figure><img src="https://raw.githubusercontent.com/carpentries/logo/master/Badge_Carpentries.svg" alt="Blue Carpentries hex person logo with no text." class="figure mx-auto d-block"><div class="figcaption">You belong in The Carpentries!</div>
-</figure></section><section><h2 class="section-heading" id="math">Math<a class="anchor" aria-label="anchor" href="#math"></a>
-</h2>
-<hr class="half-width">
-<p>One of our episodes contains <span class="math inline">\(\LaTeX\)</span> equations when describing how to
-create dynamic reports with {knitr}, so we now use mathjax to describe
-this:</p>
-<p><code>$\alpha = \dfrac{1}{(1 - \beta)^2}$</code> becomes: <span class="math inline">\(\alpha = \dfrac{1}{(1 - \beta)^2}\)</span></p>
-<p>Cool, right?</p>
+<div class="callout-inner">
+<h3 class="callout-title">Caution</h3>
+<div class="callout-content">
+<p><strong>Dont’s:</strong></p>
+<ul>
+<li>Make vague commit messages</li>
+<li>Accumulate unrelated changes in a single commit</li>
+<li>Let things go stale – delete or “stash” them</li>
+<li>Commit large files to history – they will be there forever.</li>
+</ul>
+</div>
+</div>
+</div>
 <div id="keypoints1" class="callout keypoints">
 <div class="callout-square">
 <i class="callout-icon" data-feather="key"></i>
@@ -2157,14 +2345,15 @@ this:</p>
 <h3 class="callout-title">Key Points</h3>
 <div class="callout-content">
 <ul>
-<li>Use <code>.md</code> files for episodes when you want static
-content</li>
-<li>Use <code>.Rmd</code> files for episodes when you need to generate
-output</li>
-<li>Run <code>sandpaper::check_lesson()</code> to identify any issues
-with your lesson</li>
-<li>Run <code>sandpaper::build_lesson()</code> to preview your lesson
-locally</li>
+<li>There are a number of strategies to incorporate Git into your
+day-to-day work.</li>
+<li>The learning curve can seem steep at first, but with time you will
+understand how valuable Git is and it will become easier and easier to
+use.</li>
+<li>GitHub offers numerous features that make adopting Git easier, and
+enable you to showcase your projects.</li>
+<li>There are a few best practices which will dramatically improve your
+efficiency with Git.</li>
 </ul>
 </div>
 </div>
@@ -2173,7 +2362,7 @@ locally</li>
 Place links that you need to refer to multiple times across pages here. Delete
 any links that you are not going to use.
  -->
-</section></section>
+</div></section>
 </div>
     </main>
 </div>

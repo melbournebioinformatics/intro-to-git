@@ -118,11 +118,11 @@
   Version Control with Git
 </div>
 
-<aside class="col-md-12 lesson-progress"><div style="width: 78%" class="percentage">
-    78%
+<aside class="col-md-12 lesson-progress"><div style="width: 69%" class="percentage">
+    69%
   </div>
   <div class="progress mb">
-    <div class="progress-bar mb" role="progressbar" style="width: 78%" aria-valuenow="78" aria-label="Lesson Progress" aria-valuemin="0" aria-valuemax="100">
+    <div class="progress-bar mb" role="progressbar" style="width: 69%" aria-valuenow="69" aria-label="Lesson Progress" aria-valuemin="0" aria-valuemax="100">
     </div>
   </div>
 </aside><div class="container">
@@ -375,12 +375,163 @@
 <div class="inner bordered">
 <h3 class="card-title">Objectives</h3>
 <ul><li>Fork a repository and make changes to it.</li>
-<li>Fix a merge conflict.</li>
+<li>Fix a merge conflict in your fork.</li>
 </ul></div>
 </div>
 </div>
 </div>
 </div>
+<p>When we <strong>clone</strong> a repository, we download a copy of it
+locally, attached to the same remote (the GitHub repository) from which
+we cloned it from. We can make whatever changes we want locally, but in
+order to push those changes to the remote, we must have access to the
+GitHub repository. Unless it’s our own repository or the owner of the
+repository has granted us with write access, we usually won’t have
+access to it. To circumvent this problem, we should <a href="#glossary">fork</a> the repository. Forking a repository is
+similar to cloning, but we create a new <strong>remote</strong>, instead
+of a local copy, that we have control over.</p>
+<p>Let’s <strong>fork</strong> the chosen repository and make changes to
+it.</p>
+<div id="checklist1" class="callout checklist">
+<div class="callout-square">
+<i class="callout-icon" data-feather="check-square"></i>
+</div>
+<div class="callout-inner">
+<h3 class="callout-title">Checklist</h3>
+<div class="callout-content">
+<p>To fork a repository, navigate to the repository page on GitHub and
+click the “Fork” button on the top-right:</p>
+<figure><img src="fig/fork_button.png" class="figure mx-auto d-block"></figure><p>You will be taken to the fork page. There’s no need to change
+anything here, but make sure you are forking it with your profile as the
+“Owner”:</p>
+<figure><img src="fig/fork_page.png" class="figure mx-auto d-block"></figure><figure><img src="fig/fork_loading.png" class="figure mx-auto d-block"></figure><p>Now you have your own copy of the repository, that you have total
+control over! Notice that the top-left shows that the repository was
+forked from the original repository.</p>
+<figure><img src="fig/forked_repository.png" class="figure mx-auto d-block"></figure></div>
+</div>
+</div>
+<p>Now, there are two ways to configure your local repository so that it
+follows your <strong>fork</strong>, rather than the original
+repository:</p>
+<div class="tabs">
+<nav><div id="nav-tab-1" class="nav nav-tabs" role="tablist">
+<button class="nav-link active" id="nav-tab-1-1" data-bs-toggle="tab" data-bs-target="#nav-tabpanel-1-1" type="button" role="tab" aria-controls="nav-tabpanel-1-1" aria-selected="true">
+  <h3 class="tab-header" id="nav-tab-heading-1-1">
+  Deleting and re-cloning
+  </h3>
+</button>
+<button class="nav-link" id="nav-tab-1-2" data-bs-toggle="tab" data-bs-target="#nav-tabpanel-1-2" type="button" role="tab" aria-controls="nav-tabpanel-1-2" aria-selected="false">
+  <h3 class="tab-header" id="nav-tab-heading-1-2">
+  Updating the remote
+  </h3>
+</button>
+</div>
+</nav><div id="nav-tabContent-1" class="tab-content">
+<div id="nav-tabpanel-1-1" class="tab-pane show active" aria-labelledby="nav-tab-1-1" role="tabpanel">
+<p>Simply delete the local repository (with the
+<code>rm -rf &lt;DIRECTORY_NAME&gt;</code> or right-click the directory
+and delete it), and clone it again, using the same approach that we used
+before.</p>
+</div>
+<div id="nav-tabpanel-1-2" class="tab-pane" aria-labelledby="nav-tab-1-2" role="tabpanel">
+<p>If you ran the <code>git remote -v</code> command from inside the
+original repository that you cloned, you will have seen that it shows
+the remote URL of the repository, which you do not have access to. You
+can <strong>update</strong> this remote with the following command:
+<code>git remote set-url origin &lt;URL-OF-YOUR-FORK&gt;</code>. The URL
+of your fork is the <strong>same URL</strong> that you use it to clone
+it, which can be obtained by clicking the “Code” button on the GitHub
+interface. Use <code>git remote -v</code> to confirm that the remote has
+been updated.</p>
+</div>
+</div>
+</div>
+<p>Now that your local repository is following the fork, rather than the
+original repository, you can <strong>push</strong> any changes that you
+make locally to the remote. Do this by running
+<code>git push</code>.</p>
+<div class="section level3">
+<h3 id="pull-requests">Pull requests<a class="anchor" aria-label="anchor" href="#pull-requests"></a></h3>
+<p>Even though you don’t have access to the original repository, you can
+submit changes to it through a <a href="#glossary">pull request</a>. A
+pull request is a way of requesting that the owner of the repository
+that you’re submitting the changes to to “merge” (or pull) them into
+their repository.</p>
+<p>Let’s make a pull request with the fix that we made to the original
+repository containing the code. If you haven’t pushed the code after
+committing the fix that you made, do so by running
+<code>git push</code>.</p>
+<div id="checklist2" class="callout checklist">
+<div class="callout-square">
+<i class="callout-icon" data-feather="check-square"></i>
+</div>
+<div class="callout-inner">
+<h3 class="callout-title">Checklist</h3>
+<div class="callout-content">
+<p>To create a pull request, go to the page of your fork on GitHub after
+pushing the fixed code. At the top of the code, there will be a bar
+noting the difference between your fork and the original repository. If
+you click on “Contribute”, you can create a pull request:</p>
+<figure><img src="fig/fork_commit_ahead.png" class="figure mx-auto d-block"></figure><p>After you click that, you will be taken to a screen to create your
+pull request. A default title will be given to your PR, but you can edit
+it if you want, and give it a description. Repositories may have
+different policies regarding the content of the PR, but for this one we
+can just keep it simple and create the pull request:</p>
+<figure><img src="fig/PR_creation_screen.png" class="figure mx-auto d-block"></figure><p>Once you are done, you will have created a pull request from your
+fork into the original repository. It will appear on the “Pull requests”
+tab on the original repository. Authors and maintainers from that
+repository will be able to review your pull request, make comments,
+changes, and eventually merge it.</p>
+<figure><img src="fig/PR_screen.png" class="figure mx-auto d-block"></figure></div>
+</div>
+</div>
+<p>If you have your project available on GitHub, it is likely that you
+will have to review a pull request at some point!</p>
+</div>
+<div class="section level3">
+<h3 id="merge-conflicts">Merge conflicts<a class="anchor" aria-label="anchor" href="#merge-conflicts"></a></h3>
+<p>Because of that, let’s practice <strong>reviewing</strong> a pull
+request, that is, the scenario where someone would submit a pull request
+to our repository.</p>
+<div id="discussion1" class="callout discussion">
+<div class="callout-square">
+<i class="callout-icon" data-feather="message-circle"></i>
+</div>
+<div class="callout-inner">
+<h3 class="callout-title">Challenge</h3>
+<div class="callout-content">
+<p>When a pull request is created that conflicts with your repository,
+the pull request screen should indicate it:</p>
+<figure><img src="fig/PR_screen_conflict.png" class="figure mx-auto d-block"></figure><p>When clicking “Resolve conflicts”, it should bring up a text editor
+where we can edit the conflicting file:</p>
+<figure><img src="fig/PR_conflict_editor.png" class="figure mx-auto d-block"></figure><p>Conflicts on Git always follow this format, where the conflicting
+lines have <code>&lt;&lt;&lt;</code>, <code>===</code>, and
+<code>&gt;&gt;&gt;</code> between them, indicating where the conflict
+happens.</p>
+<p>Erase the lines with <code>&lt;&lt;&lt;</code>,
+<code>&gt;&gt;&gt;</code> and <code>===</code> to fix the conflict. Make
+sure your name is the first line on the file, and the name of
+contributor, the second one. Your file should look like this:</p>
+<p>```output linenums=“1” - User 1 - User 2</p>
+<p>```</p>
+<p>Click on “Resolve conflicts” and “Commit merge”</p>
+<figure><img src="fig/PR_resolved_conflict.png" class="figure mx-auto d-block"></figure><p>This will create a new commit on the pull request:</p>
+<figure><img src="fig/PR_conflict_commit.png" class="figure mx-auto d-block"></figure><p><strong>Don’t merge the pull request just yet!</strong> Let’s finish
+our review first.</p>
+</div>
+</div>
+</div>
+<p>After fixing the conflict, let’s review our pull request. On the pull
+request screen, go to the “Files changed” tab.</p>
+<figure><img src="fig/PR_files_changed.png" class="figure mx-auto d-block"></figure><p>This tab allows us to review each file individually. Check the
+“Viewed” checkbox next to the file, and the “Review changes”. This
+allows you to Comment, Approve or Request changes on the pull request.
+Select Comment or Approve.</p>
+<figure><img src="fig/PR_review_changes.png" class="figure mx-auto d-block"></figure><p>You can now merge the PR:</p>
+<figure><img src="fig/PR_review_merge.png" class="figure mx-auto d-block"></figure><p>After merging, go to your local repository and run
+<code>git pull</code>.</p>
+<p><strong>Well done!</strong> By following this lesson so far, you’ve
+learned the fundamentals of version control with Git.</p>
 <div id="keypoints1" class="callout keypoints">
 <div class="callout-square">
 <i class="callout-icon" data-feather="key"></i>
@@ -388,16 +539,18 @@
 <div class="callout-inner">
 <h3 class="callout-title">Key Points</h3>
 <div class="callout-content">
-<ul><li>
-<code>git clone</code> copies a remote repository to our local
-repository.</li>
-<li>There are multiple ways to revert to previous changes, one of them
-is <code>git reset</code>.</li>
-<li>
-<code>HEAD</code> indicates the current state of the
-repository.</li>
-<li>We cannot push to a remote repository if we do not have access to
-it.</li>
+<ul><li>Forking a repository creates a new <strong>remote</strong> that we
+have control over.</li>
+<li>We can update the remote on our local repository using
+<code>git remote set-url &lt;REMOTE_NAME&gt; &lt;REMOTE_URL&gt;</code>.</li>
+<li>Pull requests are a way of collaborating that allows other people to
+merge our changes into their repository.</li>
+<li>Conflicts are when two commits modify the same parts of a file. We
+must resolve conflicts before merging them. This can be done by creating
+a new commit.</li>
+<li>Conflicts are denoted by <code>&lt;&lt;&lt;</code>,
+<code>&gt;&gt;&gt;</code> and <code>===</code> characters around the
+conflicting lines.</li>
 </ul></div>
 </div>
 </div>
@@ -405,6 +558,7 @@ it.</li>
 Place links that you need to refer to multiple times across pages here. Delete
 any links that you are not going to use.
  -->
+</div>
 
 
 

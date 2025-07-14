@@ -490,27 +490,30 @@ it.</li>
 </ul></section><section id="forking-a-repository"><h2 class="section-heading"><a href="forking-a-repository.html">Forking a repository</a></h2>
 <hr class="half-width">
 <ul>
-<li>
-<code>git clone</code> copies a remote repository to our local
-repository.</li>
-<li>There are multiple ways to revert to previous changes, one of them
-is <code>git reset</code>.</li>
-<li>
-<code>HEAD</code> indicates the current state of the
-repository.</li>
-<li>We cannot push to a remote repository if we do not have access to
-it.</li>
+<li>Forking a repository creates a new <strong>remote</strong> that we
+have control over.</li>
+<li>We can update the remote on our local repository using
+<code>git remote set-url &lt;REMOTE_NAME&gt; &lt;REMOTE_URL&gt;</code>.</li>
+<li>Pull requests are a way of collaborating that allows other people to
+merge our changes into their repository.</li>
+<li>Conflicts are when two commits modify the same parts of a file. We
+must resolve conflicts before merging them. This can be done by creating
+a new commit.</li>
+<li>Conflicts are denoted by <code>&lt;&lt;&lt;</code>,
+<code>&gt;&gt;&gt;</code> and <code>===</code> characters around the
+conflicting lines.</li>
 </ul></section><section id="tips-and-best-practices"><h2 class="section-heading"><a href="tips-and-best-practices.html">Tips and best practices</a></h2>
 <hr class="half-width">
 <ul>
-<li>Use <code>.md</code> files for episodes when you want static
-content</li>
-<li>Use <code>.Rmd</code> files for episodes when you need to generate
-output</li>
-<li>Run <code>sandpaper::check_lesson()</code> to identify any issues
-with your lesson</li>
-<li>Run <code>sandpaper::build_lesson()</code> to preview your lesson
-locally</li>
+<li>There are a number of strategies to incorporate Git into your
+day-to-day work.</li>
+<li>The learning curve can seem steep at first, but with time you will
+understand how valuable Git is and it will become easier and easier to
+use.</li>
+<li>GitHub offers numerous features that make adopting Git easier, and
+enable you to showcase your projects.</li>
+<li>There are a few best practices which will dramatically improve your
+efficiency with Git.</li>
 </ul></section>
 </div>
     </main>
