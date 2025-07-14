@@ -292,7 +292,7 @@
 <div class="accordion accordion-flush" id="accordionFlush6">
   <div class="accordion-item">
     <div class="accordion-header" id="flush-heading6">
-        <a href="collaborating-with-git.html">5. Collaborating with Git</a>
+        <a href="tracking-changes.html">5. Tracking changes</a>
     </div>
 <!--/div.accordion-header-->
 
@@ -304,7 +304,31 @@
 <div class="accordion accordion-flush" id="accordionFlush7">
   <div class="accordion-item">
     <div class="accordion-header" id="flush-heading7">
-        <a href="tips-and-best-practices.html">6. Tips and best practices</a>
+        <a href="remotes.html">6. Remotes: pushing and pulling</a>
+    </div>
+<!--/div.accordion-header-->
+
+  </div>
+<!--/div.accordion-item-->
+</div>
+<!--/div.accordion-flush-->
+
+<div class="accordion accordion-flush" id="accordionFlush8">
+  <div class="accordion-item">
+    <div class="accordion-header" id="flush-heading8">
+        <a href="collaborating-with-git.html">7. Collaborating with Git</a>
+    </div>
+<!--/div.accordion-header-->
+
+  </div>
+<!--/div.accordion-item-->
+</div>
+<!--/div.accordion-flush-->
+
+<div class="accordion accordion-flush" id="accordionFlush9">
+  <div class="accordion-item">
+    <div class="accordion-header" id="flush-heading9">
+        <a href="tips-and-best-practices.html">8. Tips and best practices</a>
     </div>
 <!--/div.accordion-header-->
 
@@ -403,6 +427,43 @@ written in the repository history.</li>
 <code>git init</code> initializes a repository.</li>
 <li>Git stores all of its repository data in the <code>.git</code>
 directory.</li>
+</ul></section><section id="tracking-changes"><h2 class="section-heading"><a href="tracking-changes.html">Tracking changes</a></h2>
+<hr class="half-width">
+<p>We learned several new commands. Let’s take note of them:</p>
+<ul>
+<li>
+<code>git init</code> initialises a Git repository, which is
+contained within the hidden <code>.git</code> directory.</li>
+<li>
+<code>git status</code> shows the current state of the repository,
+such as <em>which files have been changed.</em>
+</li>
+<li>
+<code>git add</code> adds a file to the <strong>staging
+area</strong>, where we gather all of the changes that will be
+committed.</li>
+<li>
+<code>git commit</code> writes the changes to history, permanently
+recording them to the repository.</li>
+<li>
+<code>git log</code> shows the list of commits in the
+repository.</li>
+<li>
+<code>git diff</code> shows the changes between the last commit and
+the current repository, showing <em>how files have been
+changed</em>.</li>
+</ul></section><section id="remotes"><h2 class="section-heading"><a href="remotes.html">Remotes: pushing and pulling</a></h2>
+<hr class="half-width">
+<ul>
+<li>The <code>git push</code> command <strong>pushes</strong> local
+changes to the GitHub remote. Before running it, we must <strong>set our
+remote</strong> to the correct URL.</li>
+<li>The <code>git pull</code> command <strong>pulls</strong> remote
+changes to our local repository. We need to run it to sync our local
+repository to the newest updates on the remote.</li>
+<li>The <code>git remote</code> command is used to manage remotes, such
+as setting the GitHub URL, to view the configured remotes, and other
+actions.</li>
 </ul></section><section id="collaborating-with-git"><h2 class="section-heading"><a href="collaborating-with-git.html">Collaborating with Git</a></h2>
 <hr class="half-width">
 <ul>

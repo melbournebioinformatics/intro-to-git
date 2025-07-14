@@ -291,7 +291,7 @@
 <div class="accordion accordion-flush" id="accordionFlush6">
   <div class="accordion-item">
     <div class="accordion-header" id="flush-heading6">
-        <a href="collaborating-with-git.html">5. Collaborating with Git</a>
+        <a href="tracking-changes.html">5. Tracking changes</a>
     </div>
 <!--/div.accordion-header-->
 
@@ -303,7 +303,31 @@
 <div class="accordion accordion-flush" id="accordionFlush7">
   <div class="accordion-item">
     <div class="accordion-header" id="flush-heading7">
-        <a href="tips-and-best-practices.html">6. Tips and best practices</a>
+        <a href="remotes.html">6. Remotes: pushing and pulling</a>
+    </div>
+<!--/div.accordion-header-->
+
+  </div>
+<!--/div.accordion-item-->
+</div>
+<!--/div.accordion-flush-->
+
+<div class="accordion accordion-flush" id="accordionFlush8">
+  <div class="accordion-item">
+    <div class="accordion-header" id="flush-heading8">
+        <a href="collaborating-with-git.html">7. Collaborating with Git</a>
+    </div>
+<!--/div.accordion-header-->
+
+  </div>
+<!--/div.accordion-item-->
+</div>
+<!--/div.accordion-flush-->
+
+<div class="accordion accordion-flush" id="accordionFlush9">
+  <div class="accordion-item">
+    <div class="accordion-header" id="flush-heading9">
+        <a href="tips-and-best-practices.html">8. Tips and best practices</a>
     </div>
 <!--/div.accordion-header-->
 
@@ -503,7 +527,7 @@ changes?</li>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1"> Show me the solution </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
 <div class="accordion-body">
 <p>Recovering the excellent version is only possible if you created a
 copy of the old version of the paper. The danger of losing good versions
@@ -802,6 +826,136 @@ any links that you are not going to use.
 </div>
 </div>
 </div>
+<p>Now that we’ve learned the basics of version control, and reasons to
+use it, let’s get some hands-on experience on how to create our first
+Git repository.</p>
+<p>Let’s start navigating to the Documents folder and creating a new
+directory there.</p>
+<div class="codewrapper sourceCode" id="cb1">
+<h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" tabindex="-1"></a><span class="bu">cd</span></span>
+<span id="cb1-2"><a href="#cb1-2" tabindex="-1"></a><span class="bu">cd</span> Documents</span>
+<span id="cb1-3"><a href="#cb1-3" tabindex="-1"></a><span class="fu">mkdir</span> gitgood</span>
+<span id="cb1-4"><a href="#cb1-4" tabindex="-1"></a><span class="bu">cd</span> gitgood</span></code></pre>
+</div>
+<p>Now that you’re in the new <code>gitgood</code> directory, we can
+start a new repository with the following command:</p>
+<div class="codewrapper sourceCode" id="cb2">
+<h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" tabindex="-1"></a><span class="fu">git</span> init</span></code></pre>
+</div>
+<p>You should see a message like this:</p>
+<div class="codewrapper">
+<h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="output" tabindex="0"><code>Initialized empty Git repository in /home/username/Documents/gitgood/.git/</code></pre>
+</div>
+<p>If we try to list the files in the repository, we can’t see anything.
+Try again with the <code>-a</code> option:</p>
+<div class="codewrapper sourceCode" id="cb4">
+<h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" tabindex="-1"></a><span class="co"># This doesn't show anything</span></span>
+<span id="cb4-2"><a href="#cb4-2" tabindex="-1"></a><span class="fu">ls</span></span>
+<span id="cb4-3"><a href="#cb4-3" tabindex="-1"></a></span>
+<span id="cb4-4"><a href="#cb4-4" tabindex="-1"></a><span class="co"># This shows the following</span></span>
+<span id="cb4-5"><a href="#cb4-5" tabindex="-1"></a><span class="fu">ls</span> <span class="at">-a</span></span></code></pre>
+</div>
+<div class="codewrapper">
+<h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="output" tabindex="0"><code>. .. .git</code></pre>
+</div>
+<p>We can see that we have created the <code>.git</code> directory. This
+hidden directory (hidden files and directories start with <code>.</code>
+character) will contain the Git repository, with all of the data that
+will be read and written by Git. If we delete this directory, we will
+lose all of the version control data stored by Git.</p>
+<div id="challenge1" class="callout challenge">
+<div class="callout-square">
+<i class="callout-icon" data-feather="zap"></i>
+</div>
+<div class="callout-inner">
+<h3 class="callout-title">Challenge</h3>
+<div class="callout-content">
+<p><strong>Hidden Files</strong></p>
+<p>Based on your previous knowledge of UNIX command line, try answering
+the following:<br>
+1. Why did the first <code>ls</code> command did not show
+anything?<br>
+2. What does the <code>-a</code> mean when we run <code>ls</code>?<br>
+3. If we don’t know what the <code>-a</code>, or any other command flags
+mean, how can we find out?<br>
+4. What do the <code>.</code> and <code>..</code> files mean?</p>
+</div>
+</div>
+</div>
+<div id="accordionSolution1" class="accordion challenge-accordion accordion-flush">
+<div class="accordion-item">
+<button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
+  <h4 class="accordion-header" id="headingSolution1"> Show me the solution </h4>
+</button>
+<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
+<div class="accordion-body">
+<ol style="list-style-type: decimal">
+<li>By default, <code>ls</code> does not display hidden files (starting
+with a <code>.</code> character). The <code>.git</code> directory hidden
+by default when we create it.<br>
+</li>
+<li>
+<code>-a</code> shows <strong>all</strong> of the files and
+directories, including hidden ones.<br>
+</li>
+<li>If we don’t know what a command-line flag means, we can try looking
+for the command in the man pages, for example by typing
+<code>man ls</code>.<br>
+</li>
+<li>The <code>.</code> and <code>..</code> files respectively refer to
+the current directory and the directory one level above (the
+<code>Documents</code>, in this case).</li>
+</ol>
+</div>
+</div>
+</div>
+</div>
+<p>We can now try one of the most important Git commands, which tells us
+the current state of our repository:</p>
+<div class="codewrapper sourceCode" id="cb6">
+<h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" tabindex="-1"></a><span class="fu">git</span> status</span></code></pre>
+</div>
+<div class="codewrapper">
+<h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="output" tabindex="0"><code>On branch main
+
+No commits yet
+
+nothing to commit (create/copy files and use "git add" to track)</code></pre>
+</div>
+<p>We can use <code>git status</code> as much as we want to check the
+state of the repository. In this case, there isn’t anything very
+interesting, but once we start accumulating changes, it will become very
+useful.</p>
+<div id="caution1" class="callout caution">
+<div class="callout-square">
+<i class="callout-icon" data-feather="alert-triangle"></i>
+</div>
+<div class="callout-inner">
+<h3 class="callout-title">Caution</h3>
+<div class="callout-content">
+<p><strong>Nested Directories</strong></p>
+<p>Once we have run <code>git init</code> on a directory, there is no
+need to run it again in subdirectories of the original directory. That’s
+why we should run the command on the <strong>parent directory</strong>
+of the project and we can include additional subdirectories as
+needed.</p>
+</div>
+</div>
+</div>
 <div id="keypoints1" class="callout keypoints">
 <div class="callout-square">
 <i class="callout-icon" data-feather="key"></i>
@@ -817,6 +971,555 @@ directory.</li>
 </ul>
 </div>
 </div>
+</div></section><section id="aio-tracking-changes"><p>Content from <a href="tracking-changes.html">Tracking changes</a></p>
+<hr>
+<p>Last updated on 2025-07-14 |
+
+        <a href="https://github.com/melbournebioinformatics/intro-to-git/edit/main/episodes/tracking-changes.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
+<div class="text-end">
+          <button role="button" aria-pressed="false" tabindex="0" id="expand-code" class="pull-right" data-expand="Expand All Solutions " data-collapse="Collapse All Solutions "> Expand All Solutions <i aria-hidden="true" data-feather="plus"></i></button>
+        </div>
+<div class="overview card">
+<h2 class="card-header">Overview</h2>
+<div class="row g-0">
+<div class="col-md-4">
+<div class="card-body">
+<div class="inner">
+<h3 class="card-title">Questions</h3>
+<ul>
+<li>How do we create a Git repository?</li>
+<li>What are some of the basic Git commands?</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="col-md-8">
+<div class="card-body">
+<div class="inner bordered">
+<h3 class="card-title">Objectives</h3>
+<ul>
+<li>Create our first Git repository.</li>
+<li>Learn basic Git commands such as
+<code>init</code>,<code>status</code>, <code>add</code>,
+<code>log</code>, and <code>diff</code>.</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+<p>We have successfully created a repository (yay!) so let’s start
+making some changes so we understand how version control works. At the
+moment, our repository is completely empty (with exception of the
+<code>.git</code> directory), so can create a few files to get
+started.</p>
+<p>Any code project should have a <strong>README</strong> file, which,
+at the very least, should provide a brief overview of the contents of
+that project directory. Even though our directory is empty, we can get
+started with a README file:</p>
+<div class="codewrapper sourceCode" id="cb1">
+<h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" tabindex="-1"></a><span class="fu">touch</span> README.md</span></code></pre>
+</div>
+<p>The <code>touch</code> command creates an empty file. We will be
+formatting our README file in <a href="https://www.markdownguide.org/" class="external-link">Markdown</a>. If you haven’t heard
+of Markdown, basically it’s a simple, easy-to-use language <a href="https://en.wikipedia.org/wiki/Markup_language" class="external-link">markup language</a>
+which GitHub fully supports.</p>
+<div id="prereq1" class="callout prereq">
+<div class="callout-square">
+<i class="callout-icon" data-feather="check"></i>
+</div>
+<div class="callout-inner">
+<h3 class="callout-title">Prerequisite</h3>
+<div class="callout-content">
+<p>Markdown files are plain text files. Even though Markdown has a range
+of features (such as acting as an extension of HTML), we can stick to
+the basics:</p>
+<ul>
+<li>
+<code>#</code> creates Level 1 Headings (usually the page
+title).</li>
+<li>
+<code>##</code> creates Level 2 Headings (usually the different
+sections in the page).</li>
+<li>Subsequent Heading levels can be created with <code>###</code>,
+<code>####</code>, etc.</li>
+<li>Backticks (``) create
+<code>mono-spaced text, useful for formatting code.</code>
+</li>
+<li>** <strong>Bold text is written with double-asterisks.</strong>
+**</li>
+<li><em>*Italics is written with a single-asterisk.*</em></li>
+</ul>
+</div>
+</div>
+</div>
+<p>Now open <code>README.md</code> on your favourite text editor, such
+as VS Code, nano, Vim, or good old Notepad, and let’s add some content
+(we recommend that you use VS Code):</p>
+<div class="codewrapper sourceCode" id="cb2">
+<h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" tabindex="-1"></a><span class="fu">nano</span> README.md</span></code></pre>
+</div>
+<p>Add the following content:</p>
+<div class="codewrapper">
+<h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="output" tabindex="0"><code># 'gitgood' repository
+
+A repository to learn how to use Git.</code></pre>
+</div>
+<p>If you type in <code>git status</code> and see what it shows:</p>
+<div class="codewrapper sourceCode" id="cb4">
+<h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" tabindex="-1"></a><span class="fu">git</span> status</span></code></pre>
+</div>
+<div class="codewrapper">
+<h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="output" tabindex="0"><code>On branch main
+
+No commits yet
+
+Untracked files:
+  (use "git add &lt;file&gt;..." to include in what will be committed)
+        README.md
+
+nothing added to commit but untracked files present (use "git add" to track)</code></pre>
+</div>
+<p>It’s similar to what we had the first time, but we can see that it
+showed an <strong>untracked file</strong>. Git has detected that a new
+file has been created, but it’s not performing any version control for
+it. We must first <strong>commit</strong> this file to our repository.
+Let’s do so by using two fundamental Git commands:</p>
+<div class="codewrapper sourceCode" id="cb6">
+<h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" tabindex="-1"></a><span class="fu">git</span> add README.md</span></code></pre>
+</div>
+<p>The <code>git add &lt;FILENAME&gt;</code> command <strong>adds a file
+to the staging area.</strong> We learned in the previous section that
+the <strong>staging area</strong> is where we store the changes that we
+intend to <strong>commit</strong> to the repository. We can see the
+effect that this has on the repository by typing <code>git status</code>
+again:</p>
+<div class="codewrapper sourceCode" id="cb7">
+<h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" tabindex="-1"></a><span class="fu">git</span> status</span></code></pre>
+</div>
+<div class="codewrapper">
+<h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="output" tabindex="0"><code>On branch main
+
+No commits yet
+
+Changes to be committed:
+  (use "git rm --cached &lt;file&gt;..." to unstage)
+        new file:   README.md</code></pre>
+</div>
+<p>Depending on the version of Git you have, the output may be slightly
+different. But the main things is that this change, that is, of creating
+a new file, has <strong>been staged, and is now ready to be
+committed</strong>. Therefore, the <code>git add</code> command is used
+to <strong>add files to the staging area</strong>. Now that these
+changes area ready to be committed, we can move on with the next
+command:</p>
+<div class="codewrapper sourceCode" id="cb9">
+<h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1" tabindex="-1"></a><span class="fu">git</span> commit <span class="at">-m</span> <span class="st">"Add repository README"</span></span></code></pre>
+</div>
+<div class="codewrapper">
+<h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="output" tabindex="0"><code>[main (root-commit) 62a9ebb] Add repository README
+ 1 file changed, 4 insertions(+)
+ create mode 100644 README.md</code></pre>
+</div>
+<p>The <code>git commit</code> command effectively records the changes
+that we made and added to the staging area <strong>into the repository
+history.</strong> Now, we’ve created another snapshot of the repository,
+one that has the changes that we’ve made, compared to the previous one
+where the repository was empty.</p>
+<div id="callout1" class="callout">
+<div class="callout-square">
+<i class="callout-icon" data-feather="bell"></i>
+</div>
+<div class="callout-inner">
+<h3 class="callout-title">Callout</h3>
+<div class="callout-content">
+<p><strong>Commit Messages</strong></p>
+<p>The <code>-m</code> in the <code>git commit</code> command means
+<code>--message</code>, that is, the message associated with that
+particular commit. <strong>You should always write descriptive
+messages</strong> of what has been done in a particular commit.</p>
+<p>After all, one of the reasons of why Git is so powerful and adopted
+is that it allows you to document your work as you go, and this is
+largely done by writing (good) commit messages. This may seem a bit
+excessive at first, such as having to write something everytime you
+press “Save” on a Word document, but as your project grows and you add
+more and more code to it, it’s important to be able to see what has been
+done in each commit. You can also just type <code>git commit</code>
+without the <code>-m</code>, in this case a text editor will pop up in
+the Terminal prompting you to write a commit message.</p>
+<p>We will learn <strong>how to write good commit messages</strong>
+later on in this lesson. But basically we want to describe
+<strong>what</strong> we changed and <strong>why</strong> we changed
+it.</p>
+</div>
+</div>
+</div>
+<p>Now that we have made our first commit, let’s check the
+<code>git status</code> again:</p>
+<div class="codewrapper sourceCode" id="cb11">
+<h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb11-1"><a href="#cb11-1" tabindex="-1"></a><span class="fu">git</span> status</span></code></pre>
+</div>
+<div class="codewrapper">
+<h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="output" tabindex="0"><code>On branch main
+nothing to commit, working tree clean</code></pre>
+</div>
+<p>The message is a bit different than before. Now, we don’t see
+<code>No commits yet</code>, but rather, that we don’t have anything to
+commit. That is because we haven’t changed anything in the repository
+since our last commit.</p>
+<div id="callout2" class="callout">
+<div class="callout-square">
+<i class="callout-icon" data-feather="bell"></i>
+</div>
+<div class="callout-inner">
+<h3 class="callout-title">Callout</h3>
+<div class="callout-content">
+<p>Now that we have a commit, we can learn a new command:</p>
+<div class="codewrapper sourceCode" id="cb13">
+<h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb13-1"><a href="#cb13-1" tabindex="-1"></a><span class="fu">git</span> log</span></code></pre>
+</div>
+<div class="codewrapper">
+<h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="output" tabindex="0"><code>commit 62a9ebbef3d7a9e0e07f2344a86f10fa58e7479c (HEAD -&gt; main)
+Author: Vini Salazar &lt;17276653+vinisalazar@users.noreply.github.com&gt;
+Date:   Mon Sep 9 14:58:43 2024 +1000
+
+    Add repository README</code></pre>
+</div>
+<p>The <code>git log</code> command shows a list of our commits. We can
+see the commit <strong>checksum</strong> (the long code after the word
+<code>commit</code>), the associated author and email, <strong>which is
+the same user name and email that we set up with <code>git config</code>
+earlier</strong>, the timestamp of the commit, and the commit message.
+The <code>git log</code> command is useful to get an understanding of
+recent activity in the repository.</p>
+</div>
+</div>
+</div>
+<p>et’s modify the <code>README.md</code> file again and add some new
+lines:</p>
+<p>```output hl_lines=“5 6” # ‘gitgood’ repository</p>
+<p>A repository to learn how to use Git.</p>
+<section><h2 class="section-heading" id="section-1">Section 1<a class="anchor" aria-label="anchor" href="#section-1"></a>
+</h2>
+<hr class="half-width">
+<p>How to git good at version control.</p>
+<pre><code>
+We've added the `## Section 1` which will represent a new section of text in our Markdown document, and added a little bit of normal text underneath it.
+
+Let's see how this affects our repository by running `git status` again:
+
+```bash
+git status</code></pre>
+<div class="codewrapper">
+<h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="output" tabindex="0"><code>On branch main
+Changes not staged for commit:
+  (use "git add &lt;file&gt;..." to update what will be committed)
+  (use "git restore &lt;file&gt;..." to discard changes in working directory)
+        modified:   README.md
+
+no changes added to commit (use "git add" and/or "git commit -a")</code></pre>
+</div>
+<p>Now that Git is keeping track of <code>README.md</code>, any changes
+that we make to the file will be tracked, so Git knows that we modified
+the file and added some lines to it. The same goes for when we delete
+lines from a file.</p>
+<div id="caution1" class="callout caution">
+<div class="callout-square">
+<i class="callout-icon" data-feather="alert-triangle"></i>
+</div>
+<div class="callout-inner">
+<h3 class="callout-title">Caution</h3>
+<div class="callout-content">
+<p>Git will only detect differences in files which have been previously
+committed to the history. If the file is <strong>untracked</strong>,
+like <code>README.md</code> was before our first commit, Git will not
+record any changes. Be mindful of this, because if you make changes to
+untracked files, you may not be able to revert them to a previous
+version!</p>
+</div>
+</div>
+</div>
+<p>he <code>git status</code> command shows that <code>README.md</code>
+was modified, but let’s have a look at <strong>what specific changes
+happened</strong>. We can do this by running a new command:</p>
+<div class="codewrapper sourceCode" id="cb17">
+<h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb17-1"><a href="#cb17-1" tabindex="-1"></a><span class="fu">git</span> diff</span></code></pre>
+</div>
+<div class="codewrapper">
+<h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="output" tabindex="0"><code>diff --git a/README.md b/README.md
+index 24e122d..e96d76a 100644
+--- a/README.md
++++ b/README.md
+@@ -2,3 +2,5 @@
+
+ A repository to learn how to use Git.
+
++## Section 1
++How to git good at version control.</code></pre>
+</div>
+<p>The <code>git diff</code> command shows the specific lines that have
+been changed. Lines that were added will have a <code>+</code> next to
+them and will be highlighted in green, and lines that were removed will
+have a <code>-</code> and will be highlighted in red.
+<code>git diff</code> is very useful in combination with
+<code>git status</code>, so we can see the current state of the
+repository and what has been changed.</p>
+<p>Let’s add and commit that change, and check out log again:</p>
+<div class="codewrapper sourceCode" id="cb19">
+<h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb19-1"><a href="#cb19-1" tabindex="-1"></a><span class="fu">git</span> add README.md</span>
+<span id="cb19-2"><a href="#cb19-2" tabindex="-1"></a><span class="fu">git</span> status  <span class="co"># (1)!</span></span>
+<span id="cb19-3"><a href="#cb19-3" tabindex="-1"></a><span class="fu">git</span> diff  <span class="co"># (2)!</span></span>
+<span id="cb19-4"><a href="#cb19-4" tabindex="-1"></a><span class="fu">git</span> commit <span class="at">-m</span> <span class="st">"Drafting Section 1 of README"</span></span>
+<span id="cb19-5"><a href="#cb19-5" tabindex="-1"></a><span class="fu">git</span> log</span></code></pre>
+</div>
+<ol style="list-style-type: decimal">
+<li>Check that <code>README.md</code> has been moved to the staging
+area.</li>
+<li>
+<code>git diff</code> doesn’t show the change anymore. Why do you
+think that is?</li>
+</ol>
+<p>We can see another commit has been added to the history.</p>
+<div class="codewrapper">
+<h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="output" tabindex="0"><code>commit 7d3487ad746e2cd6e0beaab3271de9e300a267ca (HEAD -&gt; main)
+Author: Vini Salazar &lt;17276653+vinisalazar@users.noreply.github.com&gt;
+Date:   Mon Sep 9 15:32:45 2024 +1000
+
+    Drafting Section 1 of README
+
+commit 62a9ebbef3d7a9e0e07f2344a86f10fa58e7479c
+Author: Vini Salazar &lt;17276653+vinisalazar@users.noreply.github.com&gt;
+Date:   Mon Sep 9 14:58:43 2024 +1000
+
+    Add repository README</code></pre>
+</div>
+<p><strong>Well done!</strong> You’ve learned 6 new commands, and the
+fundamentals of version control. With this alone, you can start tracking
+changes in your local repository. Next, we are going to learn how to
+interact with GitHub, based on what we’ve done so far.</p>
+<div id="keypoints1" class="callout keypoints">
+<div class="callout-square">
+<i class="callout-icon" data-feather="key"></i>
+</div>
+<div class="callout-inner">
+<h3 class="callout-title">Key Points</h3>
+<div class="callout-content">
+<p>We learned several new commands. Let’s take note of them:</p>
+<ul>
+<li>
+<code>git init</code> initialises a Git repository, which is
+contained within the hidden <code>.git</code> directory.</li>
+<li>
+<code>git status</code> shows the current state of the repository,
+such as <em>which files have been changed.</em>
+</li>
+<li>
+<code>git add</code> adds a file to the <strong>staging
+area</strong>, where we gather all of the changes that will be
+committed.</li>
+<li>
+<code>git commit</code> writes the changes to history, permanently
+recording them to the repository.</li>
+<li>
+<code>git log</code> shows the list of commits in the
+repository.</li>
+<li>
+<code>git diff</code> shows the changes between the last commit and
+the current repository, showing <em>how files have been
+changed</em>.</li>
+</ul>
+</div>
+</div>
+</div>
+<!--
+Place links that you need to refer to multiple times across pages here. Delete
+any links that you are not going to use.
+ -->
+</section></section><section id="aio-remotes"><p>Content from <a href="remotes.html">Remotes: pushing and pulling</a></p>
+<hr>
+<p>Last updated on 2025-07-14 |
+
+        <a href="https://github.com/melbournebioinformatics/intro-to-git/edit/main/episodes/remotes.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
+<div class="text-end">
+          <button role="button" aria-pressed="false" tabindex="0" id="expand-code" class="pull-right" data-expand="Expand All Solutions " data-collapse="Collapse All Solutions "> Expand All Solutions <i aria-hidden="true" data-feather="plus"></i></button>
+        </div>
+<div class="overview card">
+<h2 class="card-header">Overview</h2>
+<div class="row g-0">
+<div class="col-md-4">
+<div class="card-body">
+<div class="inner">
+<h3 class="card-title">Questions</h3>
+<ul>
+<li>How do we interact with Git remotes?</li>
+<li>What does <em>pushing</em> and <em>pulling</em> mean?</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="col-md-8">
+<div class="card-body">
+<div class="inner bordered">
+<h3 class="card-title">Objectives</h3>
+<ul>
+<li>“Push” our repository to GitHub.</li>
+<li>Learn the Git commands <code>push</code> and
+<code>pull</code>..</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section level3">
+<h3 id="pushing-changes">Pushing changes<a class="anchor" aria-label="anchor" href="#pushing-changes"></a>
+</h3>
+<p>Now that we’ve learned how to set up a <em>local</em> repository,
+let’s <strong>push</strong> that to GitHub. Before we do that, let’s
+have another look at the concept of <a href="reference.html#glossary">remotes</a>. We learned that remotes are
+a cloud copy of our repository. In order to push our repository to
+GitHub, we’ll have to <strong>set the remote</strong> of our local
+repository to GitHub.</p>
+<ol style="list-style-type: decimal">
+<li>Open GitHub, and click on the <code>+</code> button in the top right
+corner, and select “New repository”</li>
+</ol>
+<figure><img src="fig/create_repo.png" class="figure mx-auto d-block"></figure><ol start="2" style="list-style-type: decimal">
+<li>Select a name for the repository. Usually we use the same name of
+the repository’s parent directory.</li>
+</ol>
+<figure><img src="fig/set_repo_name.png" class="figure mx-auto d-block"></figure><ol start="3" style="list-style-type: decimal">
+<li>On the following screen, you will have the commands to set the
+remote and push the repository from the command line.</li>
+</ol>
+<figure><img src="fig/set_remote_screen.png" class="figure mx-auto d-block"></figure><p>Follow the commands on that screen and you will have succesfully
+pushed your repository to GitHub! On your repository, you can run
+<code>git remote -v</code> to see the URL of your new remote.</p>
+<div id="callout1" class="callout">
+<div class="callout-square">
+<i class="callout-icon" data-feather="bell"></i>
+</div>
+<div class="callout-inner">
+<h3 class="callout-title">Callout</h3>
+<div class="callout-content">
+<p><strong>SSH and HTTPS authentication</strong></p>
+<p>Notice that this page has two options for authentication: “SSH” or
+“HTTPS”. If you followed the <a href="#setup">SSH access step on the
+Setup section</a>, you should be able to use the SSH option, which is
+the default and the recommended one. However, if that doesn’t work, you
+can switch your remote to HTTPS by using
+<code>git remote set-url origin &lt;HTTPS-URL-HERE&gt;</code>.</p>
+</div>
+</div>
+</div>
+<p>Your new repository should look somewhat like this:</p>
+<figure><img src="fig/repo_landing.png" class="figure mx-auto d-block"></figure><p>Notice how the <code>README.md</code> file that we wrote makes up the
+landing page of our repository. This is one of the reasons of why having
+a README is so important, especially for GitHub projects: it will be the
+“front page” of your project. You can (and should) write any important
+information here.</p>
+<p>We have successfully <strong>pushed</strong> our local repository
+from our local machine to the remote. Now, let’s make a change directly
+on our remote and <strong>pull</strong> our changes locally.</p>
+</div>
+<div class="section level3">
+<h3 id="pulling-changes">Pulling changes<a class="anchor" aria-label="anchor" href="#pulling-changes"></a>
+</h3>
+<ol style="list-style-type: decimal">
+<li>On your new repository page, click on the pencil icon on the
+top-right side of the README.</li>
+</ol>
+<figure><img src="fig/edit_file.png" class="figure mx-auto d-block"></figure><ol start="2" style="list-style-type: decimal">
+<li>Add a new section with level 2 headings (<code>##</code>) and write
+something. Click on “Commit changes” on the top right”.</li>
+</ol>
+<figure><img src="fig/add_new_section.png" class="figure mx-auto d-block"></figure><ol start="3" style="list-style-type: decimal">
+<li>Write a descriptive commit message.</li>
+</ol>
+<figure><img src="fig/commit_remote_changes.png" class="figure mx-auto d-block"></figure><ol start="4" style="list-style-type: decimal">
+<li>Your file should reflect the update you’ve just made. Notice the
+commit stamp on the top.</li>
+</ol>
+<figure><img src="fig/file_after_editing.png" class="figure mx-auto d-block"></figure><ol start="5" style="list-style-type: decimal">
+<li>On your Terminal, navigate to your repository and run
+<code>git pull</code>.</li>
+</ol>
+<figure><img src="fig/git_pull.png" class="figure mx-auto d-block"></figure><div id="discussion1" class="callout discussion">
+<div class="callout-square">
+<i class="callout-icon" data-feather="message-circle"></i>
+</div>
+<div class="callout-inner">
+<h3 class="callout-title">Challenge</h3>
+<div class="callout-content">
+<p><strong>Syncing changes</strong> What do you think happens if you
+make a remote change, and then a local change, and you try to push the
+local changes <strong>before</strong> pulling the remote changes?</p>
+</div>
+</div>
+</div>
+<div id="keypoints1" class="callout keypoints">
+<div class="callout-square">
+<i class="callout-icon" data-feather="key"></i>
+</div>
+<div class="callout-inner">
+<h3 class="callout-title">Key Points</h3>
+<div class="callout-content">
+<ul>
+<li>The <code>git push</code> command <strong>pushes</strong> local
+changes to the GitHub remote. Before running it, we must <strong>set our
+remote</strong> to the correct URL.</li>
+<li>The <code>git pull</code> command <strong>pulls</strong> remote
+changes to our local repository. We need to run it to sync our local
+repository to the newest updates on the remote.</li>
+<li>The <code>git remote</code> command is used to manage remotes, such
+as setting the GitHub URL, to view the configured remotes, and other
+actions.</li>
+</ul>
+</div>
+</div>
+</div>
+<!--
+Place links that you need to refer to multiple times across pages here. Delete
+any links that you are not going to use.
+ -->
 </div></section><section id="aio-collaborating-with-git"><p>Content from <a href="collaborating-with-git.html">Collaborating with Git</a></p>
 <hr>
 <p>Last updated on 2025-07-14 |
@@ -1051,7 +1754,7 @@ reinforce the objectives.</li>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1"> Output </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
 <div class="accordion-body">
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -1078,7 +1781,7 @@ reinforce the objectives.</li>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution2" aria-expanded="false" aria-controls="collapseSolution2">
   <h4 class="accordion-header" id="headingSolution2"> Show me the solution </h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
 <div class="accordion-body">
 <p>You can add a line with at least three colons and a
 <code>solution</code> tag.</p>
