@@ -67,6 +67,7 @@ contact: 'vinicius.salazar@unimelb.edu.au'
 episodes: 
 - introduction.md
 - why-use-git.md
+- fundamental-concepts.md
 - your-first-git-repository.md
 - collaborating-with-git.md
 - tips-and-best-practices.md
