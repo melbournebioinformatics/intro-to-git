@@ -48,6 +48,8 @@ Sharing code with others is one thing, but Git also enables researchers to work 
 and selectively apply or reject changes that they propose. This is further enabled by GitHub, which makes it easy to do it through the web interface.
 Moreover, you can create organisations to host multiple projects, give collaborators write and admin access to projects, and give access to private repositories.
 
+::::::::::::::::::::::::::::::::::::::
+
 :::::::::::::::::::::::::::::::::::::: keypoints
 
 - Version control is like an unlimited ‘undo’.
