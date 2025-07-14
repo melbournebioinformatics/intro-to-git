@@ -118,11 +118,11 @@
   Version Control with Git
 </div>
 
-<aside class="col-md-12 lesson-progress"><div style="width: 19%" class="percentage">
-    19%
+<aside class="col-md-12 lesson-progress"><div style="width: 14%" class="percentage">
+    14%
   </div>
   <div class="progress mb">
-    <div class="progress-bar mb" role="progressbar" style="width: 19%" aria-valuenow="19" aria-label="Lesson Progress" aria-valuemin="0" aria-valuemax="100">
+    <div class="progress-bar mb" role="progressbar" style="width: 14%" aria-valuenow="14" aria-label="Lesson Progress" aria-valuemin="0" aria-valuemax="100">
     </div>
   </div>
 </aside><div class="container">
@@ -228,7 +228,7 @@
 <div class="accordion accordion-flush" id="accordionFlush4">
   <div class="accordion-item">
     <div class="accordion-header" id="flush-heading4">
-        <a href="your-first-git-repository.html">3. Your first Git repository</a>
+        <a href="fundamental-concepts.html">3. Fundamental concepts</a>
     </div><!--/div.accordion-header-->
 
   </div><!--/div.accordion-item-->
@@ -237,7 +237,7 @@
 <div class="accordion accordion-flush" id="accordionFlush5">
   <div class="accordion-item">
     <div class="accordion-header" id="flush-heading5">
-        <a href="collaborating-with-git.html">4. Collaborating with Git</a>
+        <a href="your-first-git-repository.html">4. Your first Git repository</a>
     </div><!--/div.accordion-header-->
 
   </div><!--/div.accordion-item-->
@@ -246,7 +246,16 @@
 <div class="accordion accordion-flush" id="accordionFlush6">
   <div class="accordion-item">
     <div class="accordion-header" id="flush-heading6">
-        <a href="tips-and-best-practices.html">5. Tips and best practices</a>
+        <a href="collaborating-with-git.html">5. Collaborating with Git</a>
+    </div><!--/div.accordion-header-->
+
+  </div><!--/div.accordion-item-->
+</div><!--/div.accordion-flush-->
+
+<div class="accordion accordion-flush" id="accordionFlush7">
+  <div class="accordion-item">
+    <div class="accordion-header" id="flush-heading7">
+        <a href="tips-and-best-practices.html">6. Tips and best practices</a>
     </div><!--/div.accordion-header-->
 
   </div><!--/div.accordion-item-->
@@ -295,7 +304,7 @@
   <div class="col-xl-8 col-lg-12 primary-content">
     <nav class="lesson-content mx-md-4" aria-label="Previous and Next Chapter"><!-- content for small screens --><div class="d-block d-sm-block d-md-none">
         <a class="chapter-link" href="../instructor/introduction.html"><i aria-hidden="true" class="small-arrow" data-feather="arrow-left"></i>Previous</a>
-        <a class="chapter-link float-end" href="../instructor/your-first-git-repository.html">Next<i aria-hidden="true" class="small-arrow" data-feather="arrow-right"></i></a>
+        <a class="chapter-link float-end" href="../instructor/fundamental-concepts.html">Next<i aria-hidden="true" class="small-arrow" data-feather="arrow-right"></i></a>
       </div>
       <!-- content for large screens -->
       <div class="d-none d-sm-none d-md-block">
@@ -303,8 +312,8 @@
           <i aria-hidden="true" class="small-arrow" data-feather="arrow-left"></i>
           Previous: Introduction to Git
         </a>
-        <a class="chapter-link float-end" href="../instructor/your-first-git-repository.html" rel="next">
-          Next: Your first Git...
+        <a class="chapter-link float-end" href="../instructor/fundamental-concepts.html" rel="next">
+          Next: Fundamental concepts...
           <i aria-hidden="true" class="small-arrow" data-feather="arrow-right"></i>
         </a>
       </div>
@@ -316,7 +325,7 @@
 
 
 
-        <p>Estimated time: <i aria-hidden="true" data-feather="clock"></i> 11 minutes</p>
+        <p>Estimated time: <i aria-hidden="true" data-feather="clock"></i> 10 minutes</p>
 
         <div class="text-end">
           <button role="button" aria-pressed="false" tabindex="0" id="expand-code" class="pull-right" data-expand="Expand All Solutions " data-collapse="Collapse All Solutions "> Expand All Solutions <i aria-hidden="true" data-feather="plus"></i></button>
@@ -332,7 +341,6 @@
 <div class="inner">
 <h3 class="card-title">Questions</h3>
 <ul><li>Why use version control?</li>
-<li>What are the fundamental concepts of version control?</li>
 </ul></div>
 </div>
 </div>
@@ -342,8 +350,6 @@
 <h3 class="card-title">Objectives</h3>
 <ul><li>Understand the benefits of Git in everyday life as a
 researcher.</li>
-<li>Understand the fundamental concepts of Git, such as commits,
-remotes, and the staging area.</li>
 </ul></div>
 </div>
 </div>
@@ -356,26 +362,23 @@ let’s understand why we should use it as researchers.</p>
 <p>There are a number of reasons to argue that using version control
 will make us better researchers. That is because version control systems
 can be used for:</p>
-<ul><li><p><strong>Backing up your code</strong><br>
-The most fundamental idea of version control is that you can use it to
-safely back up your code. That means not only having a copy of it, but
-having a copy of each version as your code evolves throughout time. If
-you use version control effectively, it will be very difficult for your
-code to be permanently lost, deleted or erased.</p></li>
-<li><p><strong>Sharing your code</strong><br>
-Although Git is already explicitly designed to work in a distributed
+</div>
+<div class="section level3">
+<h3 id="backing-up-your-code">Backing up your code<a class="anchor" aria-label="anchor" href="#backing-up-your-code"></a></h3>
+<p>The most fundamental idea of version control is that you can use it
+to safely back up your code. That means not only having a copy of it,
+but having a copy of each version as your code evolves throughout time.
+If you use version control effectively, it will be very difficult for
+your code to be permanently lost, deleted or erased.</p>
+</div>
+<div class="section level3">
+<h3 id="sharing-your-code">Sharing your code<a class="anchor" aria-label="anchor" href="#sharing-your-code"></a></h3>
+<p>Although Git is already explicitly designed to work in a distributed
 manner, modern version control platforms make sharing code with others
 even easier. If our repository is public, anyone can easily access it,
 copy, and modify the code as they please. You can make your GitHub
 profile a portfolio of your coding and analysis projects, with a
-user-friendly interface.</p></li>
-</ul><div id="callout1" class="callout">
-<div class="callout-square">
-<i class="callout-icon" data-feather="bell"></i>
-</div>
-<div class="callout-inner">
-<h3 class="callout-title">Callout</h3>
-<div class="callout-content">
+user-friendly interface.</p>
 <p><strong>Packaging and distribution</strong></p>
 <p>Platforms such as GitHub provide a number of features that facilitate
 <strong>packaging</strong> our code. One thing is to have a bunch of
@@ -384,18 +387,49 @@ effectively, to make it easier for users to acquire and install our
 code, we can bundle it as a <strong>software package</strong> and upload
 it to platforms such as <a href="https://pypi.python.org/" class="external-link">PyPI</a> (for
 Python) or <a href="https://cran.r-project.org/" class="external-link">CRAN</a> (for R).</p>
-<ul><li>
-<strong>Collaborating</strong><br>
-Sharing code with others is one thing, but Git also enables researchers
-to work <em>together</em> on the same project. You can review other
-users’ commits, and selectively apply or reject changes that they
-propose. This is further enabled by GitHub, which makes it easy to do it
-through the web interface. Moreover, you can create organisations to
-host multiple projects, give collaborators write and admin access to
-projects, and give access to private repositories.</li>
-</ul></div>
+</div>
+<div class="section level3">
+<h3 id="collaborating">Collaborating<a class="anchor" aria-label="anchor" href="#collaborating"></a></h3>
+<p>Sharing code with others is one thing, but Git also enables
+researchers to work <em>together</em> on the same project. You can
+review other users’ commits, and selectively apply or reject changes
+that they propose. This is further enabled by GitHub, which makes it
+easy to do it through the web interface. Moreover, you can create
+organisations to host multiple projects, give collaborators write and
+admin access to projects, and give access to private repositories.</p>
+<div id="discussion1" class="callout discussion">
+<div class="callout-square">
+<i class="callout-icon" data-feather="message-circle"></i>
+</div>
+<div class="callout-inner">
+<h3 class="callout-title">Discussion</h3>
+<div class="callout-content">
+<p><strong>The ‘Lingua Franca’ of software engineering</strong></p>
+<p>Because of the way Git enables collaboration, it has essentially
+become the way that programmers interact on a technical basis. If you
+want to make a contribution to a large code base or project, most likely
+you will have to submit your changes through Git. GitHub also allows the
+creation of <strong>issues</strong>, where you can report problems or
+create discussions about the code. Knowing Git will probably be required
+if you want to work in coding projects with other people (including past
+and future you!)</p>
 </div>
 </div>
+</div>
+</div>
+<div class="section level3">
+<h3 id="documenting-your-work">Documenting your work**<a class="anchor" aria-label="anchor" href="#documenting-your-work"></a></h3>
+<p>Because changes in Git are structured through commits, it is very
+straightforward to document our work as we go. Whenever we create a
+commit, we must write a message that’s attached to it (we’ll learn more
+about that), which almost mandates that we document what we are doing.
+This will create a <a href="reference.html#glossary">history</a> of our
+work which can effectively be used as a <strong>digital research
+notebook</strong> if done correctly. The way Git works also allows the
+creation of <a href="reference.html#glossary">branches</a> and <a href="reference.html#glossary">tags</a>, which can be used to keep track
+of different parts of the development. This is especially useful for
+large projects where many people may be working on different things in
+parallel.</p>
 <div id="keypoints1" class="callout keypoints">
 <div class="callout-square">
 <i class="callout-icon" data-feather="key"></i>
@@ -403,8 +437,14 @@ projects, and give access to private repositories.</li>
 <div class="callout-inner">
 <h3 class="callout-title">Key Points</h3>
 <div class="callout-content">
-<ul><li>Version control is like an unlimited ‘undo’.</li>
-<li>Version control also allows many people to work in parallel.</li>
+<p>Why using Git will make you <strong>a better researcher:</strong></p>
+<ul><li>You know you can always go back to a working version of your
+code</li>
+<li>You will have a way of showcasing your projects</li>
+<li>You will be able to distribute your code to others</li>
+<li>You will be able to modify other peoples’ code and make
+contributions to it</li>
+<li>You will have a digital lab notebook</li>
 </ul></div>
 </div>
 </div>
@@ -419,7 +459,7 @@ any links that you are not going to use.
       </div> <!-- / div.lesson-content -->
     </main><!-- / main#main-content.main-content --><nav class="bottom-pagination mx-md-4" aria-label="Previous and Next Chapter"><div class="d-block d-sm-block d-md-none">
         <a class="chapter-link" href="../instructor/introduction.html"><i aria-hidden="true" class="small-arrow" data-feather="arrow-left"></i>Previous</a>
-        <a class="chapter-link float-end" href="../instructor/your-first-git-repository.html">Next<i aria-hidden="true" class="small-arrow" data-feather="arrow-right"></i></a>
+        <a class="chapter-link float-end" href="../instructor/fundamental-concepts.html">Next<i aria-hidden="true" class="small-arrow" data-feather="arrow-right"></i></a>
       </div>
       <!-- content for large screens -->
       <div class="d-none d-sm-none d-md-block">
@@ -427,8 +467,8 @@ any links that you are not going to use.
           <i aria-hidden="true" class="small-arrow" data-feather="arrow-left"></i>
           Previous: Introduction to Git
         </a>
-        <a class="chapter-link float-end" href="../instructor/your-first-git-repository.html" rel="next">
-          Next: Your first Git...
+        <a class="chapter-link float-end" href="../instructor/fundamental-concepts.html" rel="next">
+          Next: Fundamental concepts...
           <i aria-hidden="true" class="small-arrow" data-feather="arrow-right"></i>
         </a>
       </div>

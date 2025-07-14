@@ -268,7 +268,7 @@
 <div class="accordion accordion-flush" id="accordionFlush4">
   <div class="accordion-item">
     <div class="accordion-header" id="flush-heading4">
-        <a href="your-first-git-repository.html">3. Your first Git repository</a>
+        <a href="fundamental-concepts.html">3. Fundamental concepts</a>
     </div>
 <!--/div.accordion-header-->
 
@@ -280,7 +280,7 @@
 <div class="accordion accordion-flush" id="accordionFlush5">
   <div class="accordion-item">
     <div class="accordion-header" id="flush-heading5">
-        <a href="collaborating-with-git.html">4. Collaborating with Git</a>
+        <a href="your-first-git-repository.html">4. Your first Git repository</a>
     </div>
 <!--/div.accordion-header-->
 
@@ -292,7 +292,19 @@
 <div class="accordion accordion-flush" id="accordionFlush6">
   <div class="accordion-item">
     <div class="accordion-header" id="flush-heading6">
-        <a href="tips-and-best-practices.html">5. Tips and best practices</a>
+        <a href="collaborating-with-git.html">5. Collaborating with Git</a>
+    </div>
+<!--/div.accordion-header-->
+
+  </div>
+<!--/div.accordion-item-->
+</div>
+<!--/div.accordion-flush-->
+
+<div class="accordion accordion-flush" id="accordionFlush7">
+  <div class="accordion-item">
+    <div class="accordion-header" id="flush-heading7">
+        <a href="tips-and-best-practices.html">6. Tips and best practices</a>
     </div>
 <!--/div.accordion-header-->
 
@@ -437,16 +449,16 @@ base document, ultimately resulting in different versions of that
 document. For example, two users can make independent sets of changes on
 the same document.</p>
 <figure><img src="../fig/versions.svg" alt="A diagram with one source document that has been modified in two different ways to produce two different versions of the document" class="figure mx-auto d-block"></figure><p>Unless multiple users make changes to the same section of the
-document - a <a href="#glossary">conflict</a> - you can incorporate two
-sets of changes into the same base document.</p>
+document - a <a href="reference.html#glossary">conflict</a> - you can
+incorporate two sets of changes into the same base document.</p>
 <figure><img src="../fig/merge.svg" alt="A diagram that shows the merging of two different document versions into one document that contains all of the changes from both versions" class="figure mx-auto d-block"></figure><p>A version control system is a tool that keeps track of these changes
 for us, effectively creating different versions of our files. It allows
 us to decide which changes will be made to the next version (each record
-of these changes is called a <a href="#glossary">commit</a>, and keeps
-useful metadata about them. The complete history of commits for a
-particular project and their metadata make up a <a href="#glossary">repository</a>. Repositories can be kept in sync across
-different computers, facilitating collaboration among different
-people.</p>
+of these changes is called a <a href="reference.html#glossary">commit</a>, and keeps useful metadata
+about them. The complete history of commits for a particular project and
+their metadata make up a <a href="reference.html#glossary">repository</a>. Repositories can be kept
+in sync across different computers, facilitating collaboration among
+different people.</p>
 <div id="discussion1" class="callout discussion">
 <div class="callout-square">
 <i class="callout-icon" data-feather="message-circle"></i>
@@ -494,7 +506,7 @@ changes?</li>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1"> Show me the solution </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
 <div class="accordion-body">
 <p>Recovering the excellent version is only possible if you created a
 copy of the old version of the paper. The danger of losing good versions
@@ -538,7 +550,7 @@ any links that you are not going to use.
 <p>Last updated on 2025-07-14 |
 
         <a href="https://github.com/melbournebioinformatics/intro-to-git/edit/main/episodes/why-use-git.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
-<p>Estimated time: <i aria-hidden="true" data-feather="clock"></i> 11 minutes</p>
+<p>Estimated time: <i aria-hidden="true" data-feather="clock"></i> 10 minutes</p>
 <div class="text-end">
           <button role="button" aria-pressed="false" tabindex="0" id="expand-code" class="pull-right" data-expand="Expand All Solutions " data-collapse="Collapse All Solutions "> Expand All Solutions <i aria-hidden="true" data-feather="plus"></i></button>
         </div>
@@ -551,7 +563,6 @@ any links that you are not going to use.
 <h3 class="card-title">Questions</h3>
 <ul>
 <li>Why use version control?</li>
-<li>What are the fundamental concepts of version control?</li>
 </ul>
 </div>
 </div>
@@ -563,8 +574,6 @@ any links that you are not going to use.
 <ul>
 <li>Understand the benefits of Git in everyday life as a
 researcher.</li>
-<li>Understand the fundamental concepts of Git, such as commits,
-remotes, and the staging area.</li>
 </ul>
 </div>
 </div>
@@ -579,28 +588,25 @@ let’s understand why we should use it as researchers.</p>
 <p>There are a number of reasons to argue that using version control
 will make us better researchers. That is because version control systems
 can be used for:</p>
-<ul>
-<li><p><strong>Backing up your code</strong><br>
-The most fundamental idea of version control is that you can use it to
-safely back up your code. That means not only having a copy of it, but
-having a copy of each version as your code evolves throughout time. If
-you use version control effectively, it will be very difficult for your
-code to be permanently lost, deleted or erased.</p></li>
-<li><p><strong>Sharing your code</strong><br>
-Although Git is already explicitly designed to work in a distributed
+</div>
+<div class="section level3">
+<h3 id="backing-up-your-code">Backing up your code<a class="anchor" aria-label="anchor" href="#backing-up-your-code"></a>
+</h3>
+<p>The most fundamental idea of version control is that you can use it
+to safely back up your code. That means not only having a copy of it,
+but having a copy of each version as your code evolves throughout time.
+If you use version control effectively, it will be very difficult for
+your code to be permanently lost, deleted or erased.</p>
+</div>
+<div class="section level3">
+<h3 id="sharing-your-code">Sharing your code<a class="anchor" aria-label="anchor" href="#sharing-your-code"></a>
+</h3>
+<p>Although Git is already explicitly designed to work in a distributed
 manner, modern version control platforms make sharing code with others
 even easier. If our repository is public, anyone can easily access it,
 copy, and modify the code as they please. You can make your GitHub
 profile a portfolio of your coding and analysis projects, with a
-user-friendly interface.</p></li>
-</ul>
-<div id="callout1" class="callout">
-<div class="callout-square">
-<i class="callout-icon" data-feather="bell"></i>
-</div>
-<div class="callout-inner">
-<h3 class="callout-title">Callout</h3>
-<div class="callout-content">
+user-friendly interface.</p>
 <p><strong>Packaging and distribution</strong></p>
 <p>Platforms such as GitHub provide a number of features that facilitate
 <strong>packaging</strong> our code. One thing is to have a bunch of
@@ -609,20 +615,51 @@ effectively, to make it easier for users to acquire and install our
 code, we can bundle it as a <strong>software package</strong> and upload
 it to platforms such as <a href="https://pypi.python.org/" class="external-link">PyPI</a> (for
 Python) or <a href="https://cran.r-project.org/" class="external-link">CRAN</a> (for R).</p>
-<ul>
-<li>
-<strong>Collaborating</strong><br>
-Sharing code with others is one thing, but Git also enables researchers
-to work <em>together</em> on the same project. You can review other
-users’ commits, and selectively apply or reject changes that they
-propose. This is further enabled by GitHub, which makes it easy to do it
-through the web interface. Moreover, you can create organisations to
-host multiple projects, give collaborators write and admin access to
-projects, and give access to private repositories.</li>
-</ul>
+</div>
+<div class="section level3">
+<h3 id="collaborating">Collaborating<a class="anchor" aria-label="anchor" href="#collaborating"></a>
+</h3>
+<p>Sharing code with others is one thing, but Git also enables
+researchers to work <em>together</em> on the same project. You can
+review other users’ commits, and selectively apply or reject changes
+that they propose. This is further enabled by GitHub, which makes it
+easy to do it through the web interface. Moreover, you can create
+organisations to host multiple projects, give collaborators write and
+admin access to projects, and give access to private repositories.</p>
+<div id="discussion1" class="callout discussion">
+<div class="callout-square">
+<i class="callout-icon" data-feather="message-circle"></i>
+</div>
+<div class="callout-inner">
+<h3 class="callout-title">Discussion</h3>
+<div class="callout-content">
+<p><strong>The ‘Lingua Franca’ of software engineering</strong></p>
+<p>Because of the way Git enables collaboration, it has essentially
+become the way that programmers interact on a technical basis. If you
+want to make a contribution to a large code base or project, most likely
+you will have to submit your changes through Git. GitHub also allows the
+creation of <strong>issues</strong>, where you can report problems or
+create discussions about the code. Knowing Git will probably be required
+if you want to work in coding projects with other people (including past
+and future you!)</p>
 </div>
 </div>
 </div>
+</div>
+<div class="section level3">
+<h3 id="documenting-your-work">Documenting your work**<a class="anchor" aria-label="anchor" href="#documenting-your-work"></a>
+</h3>
+<p>Because changes in Git are structured through commits, it is very
+straightforward to document our work as we go. Whenever we create a
+commit, we must write a message that’s attached to it (we’ll learn more
+about that), which almost mandates that we document what we are doing.
+This will create a <a href="reference.html#glossary">history</a> of our
+work which can effectively be used as a <strong>digital research
+notebook</strong> if done correctly. The way Git works also allows the
+creation of <a href="reference.html#glossary">branches</a> and <a href="reference.html#glossary">tags</a>, which can be used to keep track
+of different parts of the development. This is especially useful for
+large projects where many people may be working on different things in
+parallel.</p>
 <div id="keypoints1" class="callout keypoints">
 <div class="callout-square">
 <i class="callout-icon" data-feather="key"></i>
@@ -630,9 +667,101 @@ projects, and give access to private repositories.</li>
 <div class="callout-inner">
 <h3 class="callout-title">Key Points</h3>
 <div class="callout-content">
+<p>Why using Git will make you <strong>a better researcher:</strong></p>
 <ul>
-<li>Version control is like an unlimited ‘undo’.</li>
-<li>Version control also allows many people to work in parallel.</li>
+<li>You know you can always go back to a working version of your
+code</li>
+<li>You will have a way of showcasing your projects</li>
+<li>You will be able to distribute your code to others</li>
+<li>You will be able to modify other peoples’ code and make
+contributions to it</li>
+<li>You will have a digital lab notebook</li>
+</ul>
+</div>
+</div>
+</div>
+<!--
+Place links that you need to refer to multiple times across pages here. Delete
+any links that you are not going to use.
+ -->
+</div></section><section id="aio-fundamental-concepts"><p>Content from <a href="fundamental-concepts.html">Fundamental concepts</a></p>
+<hr>
+<p>Last updated on 2025-07-14 |
+
+        <a href="https://github.com/melbournebioinformatics/intro-to-git/edit/main/episodes/fundamental-concepts.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
+<p>Estimated time: <i aria-hidden="true" data-feather="clock"></i> 20 minutes</p>
+<div class="text-end">
+          <button role="button" aria-pressed="false" tabindex="0" id="expand-code" class="pull-right" data-expand="Expand All Solutions " data-collapse="Collapse All Solutions "> Expand All Solutions <i aria-hidden="true" data-feather="plus"></i></button>
+        </div>
+<div class="overview card">
+<h2 class="card-header">Overview</h2>
+<div class="row g-0">
+<div class="col-md-4">
+<div class="card-body">
+<div class="inner">
+<h3 class="card-title">Questions</h3>
+<ul>
+<li>What are the fundamental concepts of version control?</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="col-md-8">
+<div class="card-body">
+<div class="inner bordered">
+<h3 class="card-title">Objectives</h3>
+<ul>
+<li>Understand the fundamental concepts of Git, such as commits,
+remotes, and the staging area.</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+<p>Before we get started with hands-on work, let’s understand some basic
+concepts about Git. We’ve already learned that Git tracks different
+versions of a project by using <strong>commits</strong>, which are like
+<strong>snapshots of a project</strong>. But let’s take a closer look on
+how this works in practice, by learning about <a href="reference.html#glossary">remotes</a> and <a href="reference.html#glossary">the staging area:</a></p>
+<div class="section level3">
+<h3 id="remotes">Remotes<a class="anchor" aria-label="anchor" href="#remotes"></a>
+</h3>
+<p>Think of remotes as “cloud copies” of your Git repository. While you
+have your project on your local computer, a remote is a version stored
+on platforms like GitHub or GitLab. Remotes allow multiple people to
+work on the same project, sharing updates by pushing changes to the
+remote and pulling others’ changes from it. For example, you can push
+your work to a remote to back it up or collaborate with teammates by
+pulling their changes into your local project.</p>
+</div>
+<div class="section level3">
+<h3 id="staging-area">Staging area<a class="anchor" aria-label="anchor" href="#staging-area"></a>
+</h3>
+<p>The staging area in Git is like a “waiting room” for changes you want
+to commit. When you modify files, those changes don’t go directly into a
+commit. Instead, you first add them to the staging area, where you can
+review and decide what will be included in your next commit. It gives
+you control to commit only specific changes rather than everything at
+once. Think of it as preparing ingredients on the counter before putting
+them into a recipe—you only add what you need.</p>
+<figure><img src="../fig/git-staging-area.svg" class="figure mx-auto d-block"></figure><div id="keypoints1" class="callout keypoints">
+<div class="callout-square">
+<i class="callout-icon" data-feather="key"></i>
+</div>
+<div class="callout-inner">
+<h3 class="callout-title">Key Points</h3>
+<div class="callout-content">
+<ul>
+<li>
+<strong>Commits</strong> are snapshots of a repository.</li>
+<li>We can have a copy of our repository in a different location, called
+a <strong>remote</strong>. We can send (“push”) and receive (“pull”)
+changes from the remote to interact with others’ work, and also to back
+up or update our local copy.</li>
+<li>The <strong>staging area</strong> is where we keep track of the
+changes that we are going to commit, that is, which are going to be
+written in the repository history.</li>
 </ul>
 </div>
 </div>
@@ -646,6 +775,59 @@ any links that you are not going to use.
 <p>Last updated on 2025-07-14 |
 
         <a href="https://github.com/melbournebioinformatics/intro-to-git/edit/main/episodes/your-first-git-repository.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
+<p>Estimated time: <i aria-hidden="true" data-feather="clock"></i> 12 minutes</p>
+<div class="text-end">
+          <button role="button" aria-pressed="false" tabindex="0" id="expand-code" class="pull-right" data-expand="Expand All Solutions " data-collapse="Collapse All Solutions "> Expand All Solutions <i aria-hidden="true" data-feather="plus"></i></button>
+        </div>
+<div class="overview card">
+<h2 class="card-header">Overview</h2>
+<div class="row g-0">
+<div class="col-md-4">
+<div class="card-body">
+<div class="inner">
+<h3 class="card-title">Questions</h3>
+<ul>
+<li>How do we create a Git repository?</li>
+<li>What are some of the basic Git commands?</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="col-md-8">
+<div class="card-body">
+<div class="inner bordered">
+<h3 class="card-title">Objectives</h3>
+<ul>
+<li>Create our first Git repository on GitHub.</li>
+<li>Learn basic Git commands such as
+<code>init</code>,<code>status</code>, <code>add</code>,
+<code>log</code>, and <code>diff</code>.</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="keypoints1" class="callout keypoints">
+<div class="callout-square">
+<i class="callout-icon" data-feather="key"></i>
+</div>
+<div class="callout-inner">
+<h3 class="callout-title">Key Points</h3>
+<div class="callout-content">
+<ul>
+<li>
+<code>git init</code> initializes a repository.</li>
+<li>Git stores all of its repository data in the <code>.git</code>
+directory.</li>
+</ul>
+</div>
+</div>
+</div></section><section id="aio-collaborating-with-git"><p>Content from <a href="collaborating-with-git.html">Collaborating with Git</a></p>
+<hr>
+<p>Last updated on 2025-07-14 |
+
+        <a href="https://github.com/melbournebioinformatics/intro-to-git/edit/main/episodes/collaborating-with-git.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 <p>Estimated time: <i aria-hidden="true" data-feather="clock"></i> 12 minutes</p>
 <div class="text-end">
           <button role="button" aria-pressed="false" tabindex="0" id="expand-code" class="pull-right" data-expand="Expand All Solutions " data-collapse="Collapse All Solutions "> Expand All Solutions <i aria-hidden="true" data-feather="plus"></i></button>
@@ -764,175 +946,6 @@ View”</p>
   <h4 class="accordion-header" id="headingSolution2"> Show me the solution </h4>
 </button>
 <div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
-<div class="accordion-body">
-<p>You can add a line with at least three colons and a
-<code>solution</code> tag.</p>
-</div>
-</div>
-</div>
-</div>
-</section><section><h2 class="section-heading" id="figures">Figures<a class="anchor" aria-label="anchor" href="#figures"></a>
-</h2>
-<hr class="half-width">
-<p>You can use pandoc markdown for static figures with the following
-syntax:</p>
-<p><code>![optional caption that appears below the figure](figure url){alt='alt text for accessibility purposes'}</code></p>
-<figure><img src="https://raw.githubusercontent.com/carpentries/logo/master/Badge_Carpentries.svg" alt="Blue Carpentries hex person logo with no text." class="figure mx-auto d-block"><div class="figcaption">You belong in The Carpentries!</div>
-</figure></section><section><h2 class="section-heading" id="math">Math<a class="anchor" aria-label="anchor" href="#math"></a>
-</h2>
-<hr class="half-width">
-<p>One of our episodes contains <span class="math inline">\(\LaTeX\)</span> equations when describing how to
-create dynamic reports with {knitr}, so we now use mathjax to describe
-this:</p>
-<p><code>$\alpha = \dfrac{1}{(1 - \beta)^2}$</code> becomes: <span class="math inline">\(\alpha = \dfrac{1}{(1 - \beta)^2}\)</span></p>
-<p>Cool, right?</p>
-<div id="keypoints1" class="callout keypoints">
-<div class="callout-square">
-<i class="callout-icon" data-feather="key"></i>
-</div>
-<div class="callout-inner">
-<h3 class="callout-title">Key Points</h3>
-<div class="callout-content">
-<ul>
-<li>Use <code>.md</code> files for episodes when you want static
-content</li>
-<li>Use <code>.Rmd</code> files for episodes when you need to generate
-output</li>
-<li>Run <code>sandpaper::check_lesson()</code> to identify any issues
-with your lesson</li>
-<li>Run <code>sandpaper::build_lesson()</code> to preview your lesson
-locally</li>
-</ul>
-</div>
-</div>
-</div>
-<!--
-Place links that you need to refer to multiple times across pages here. Delete
-any links that you are not going to use.
- -->
-</section></section><section id="aio-collaborating-with-git"><p>Content from <a href="collaborating-with-git.html">Collaborating with Git</a></p>
-<hr>
-<p>Last updated on 2025-07-14 |
-
-        <a href="https://github.com/melbournebioinformatics/intro-to-git/edit/main/episodes/collaborating-with-git.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
-<p>Estimated time: <i aria-hidden="true" data-feather="clock"></i> 12 minutes</p>
-<div class="text-end">
-          <button role="button" aria-pressed="false" tabindex="0" id="expand-code" class="pull-right" data-expand="Expand All Solutions " data-collapse="Collapse All Solutions "> Expand All Solutions <i aria-hidden="true" data-feather="plus"></i></button>
-        </div>
-<div class="overview card">
-<h2 class="card-header">Overview</h2>
-<div class="row g-0">
-<div class="col-md-4">
-<div class="card-body">
-<div class="inner">
-<h3 class="card-title">Questions</h3>
-<ul>
-<li>How do you write a lesson using R Markdown and
-<a href="https://carpentries.github.io/sandpaper/" class="external-link">sandpaper</a>?</li>
-</ul>
-</div>
-</div>
-</div>
-<div class="col-md-8">
-<div class="card-body">
-<div class="inner bordered">
-<h3 class="card-title">Objectives</h3>
-<ul>
-<li>Explain how to use markdown with the new lesson template</li>
-<li>Demonstrate how to include pieces of code, figures, and nested
-challenge blocks</li>
-</ul>
-</div>
-</div>
-</div>
-</div>
-</div>
-<section><h2 class="section-heading" id="introduction">Introduction<a class="anchor" aria-label="anchor" href="#introduction"></a>
-</h2>
-<hr class="half-width">
-<p>This is a lesson created via The Carpentries Workbench. It is written
-in <a href="https://pandoc.org/MANUAL.html" class="external-link">Pandoc-flavored Markdown</a>
-for static files (with extension <code>.md</code>) and <a href="https://rmarkdown.rstudio.com/" class="external-link">R Markdown</a> for dynamic files
-that can render code into output (with extension <code>.Rmd</code>).
-Please refer to the <a href="https://carpentries.github.io/sandpaper-docs/" class="external-link">Introduction to The
-Carpentries Workbench</a> for full documentation.</p>
-<p>What you need to know is that there are three sections required for a
-valid Carpentries lesson template:</p>
-<ol style="list-style-type: decimal">
-<li>
-<code>questions</code> are displayed at the beginning of the episode
-to prime the learner for the content.</li>
-<li>
-<code>objectives</code> are the learning objectives for an episode
-displayed with the questions.</li>
-<li>
-<code>keypoints</code> are displayed at the end of the episode to
-reinforce the objectives.</li>
-</ol>
-<div id="accordionInstructor1" class="accordion instructor-note accordion-flush">
-<div class="accordion-item">
-<button class="accordion-button instructor-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseInstructor1" aria-expanded="false" aria-controls="collapseInstructor1">
-  <h3 class="accordion-header" id="headingInstructor1">  <div class="note-square"><i aria-hidden="true" class="callout-icon" data-feather="edit-2"></i></div> Instructor Note </h3>
-</button>
-<div id="collapseInstructor1" class="accordion-collapse collapse" aria-labelledby="headingInstructor1" data-bs-parent="#accordionInstructor1">
-<div class="accordion-body">
-<p>Inline instructor notes can help inform instructors of timing
-challenges associated with the lessons. They appear in the “Instructor
-View”</p>
-</div>
-</div>
-</div>
-</div>
-<div id="challenge-1-can-you-do-it" class="callout challenge">
-<div class="callout-square">
-<i class="callout-icon" data-feather="zap"></i>
-</div>
-<div id="challenge-1-can-you-do-it" class="callout-inner">
-<h3 class="callout-title">Challenge 1: Can you do it?</h3>
-<div class="callout-content">
-<p>What is the output of this command?</p>
-<div class="codewrapper sourceCode" id="cb1">
-<h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
-</h3>
-<pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="fu">paste</span><span class="op">(</span><span class="st">"This"</span>, <span class="st">"new"</span>, <span class="st">"lesson"</span>, <span class="st">"looks"</span>, <span class="st">"good"</span><span class="op">)</span></span></code></pre>
-</div>
-</div>
-</div>
-</div>
-<div id="accordionSolution1" class="accordion challenge-accordion accordion-flush">
-<div class="accordion-item">
-<button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
-  <h4 class="accordion-header" id="headingSolution1"> Output </h4>
-</button>
-<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
-<div class="accordion-body">
-<div class="codewrapper">
-<h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
-</h3>
-<pre class="output" tabindex="0"><code>[1] "This new lesson looks good"</code></pre>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div id="challenge-2-how-do-you-nest-solutions-within-challenge-blocks" class="callout challenge">
-<div class="callout-square">
-<i class="callout-icon" data-feather="zap"></i>
-</div>
-<div id="challenge-2-how-do-you-nest-solutions-within-challenge-blocks" class="callout-inner">
-<h3 class="callout-title">Challenge 2: how do you nest solutions within challenge blocks?</h3>
-<div class="callout-content">
-
-</div>
-</div>
-</div>
-<div id="accordionSolution2" class="accordion challenge-accordion accordion-flush">
-<div class="accordion-item">
-<button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution2" aria-expanded="false" aria-controls="collapseSolution2">
-  <h4 class="accordion-header" id="headingSolution2"> Show me the solution </h4>
-</button>
-<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
 <div class="accordion-body">
 <p>You can add a line with at least three colons and a
 <code>solution</code> tag.</p>
