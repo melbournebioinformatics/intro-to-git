@@ -69,6 +69,8 @@ episodes:
 - why-use-git.md
 - fundamental-concepts.md
 - your-first-git-repository.md
+- tracking-changes.md
+- remotes.md
 - collaborating-with-git.md
 - tips-and-best-practices.md
 
