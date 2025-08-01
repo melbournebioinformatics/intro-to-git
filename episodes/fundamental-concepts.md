@@ -26,6 +26,16 @@ The staging area in Git is like a "waiting room" for changes you want to commit.
 
 ![](fig/git-staging-area.svg)
 
+### Using the VS Code extension
+
+We can see the changes in the VS Code "Source Control" tab. In the following example, we've modified an existing file, and added a new file with an image:
+
+![](fig/changes.png){alt='Source control tab showing modified file and a new file.'}
+
+After we move the files to the staging area, they are ready to be commited:
+
+![](fig/staged-changes.png){alt='Source control tab showing changes in the staging area.'}
+
 
 :::::::::::::::::::::::::::::::::::::: keypoints
 

@@ -73,6 +73,10 @@ metadata make up a [repository](../learners/reference.md#glossary).
 Repositories can be kept in sync across different computers, facilitating
 collaboration among different people.
 
+This is how the history of commits looks for this website that you are looking at:
+
+![](fig/commit-graph.png){alt='How the commit graph looks for this website.'}
+
 :::::::::::::::::::::::::::::::::::::: discussion 
 
 **The Long History of Version Control Systems**
