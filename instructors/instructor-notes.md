@@ -19,3 +19,9 @@ TO-DO notes from sprint 01/08/2025
 - Introduce branches in "tracking-changes.md" as well. Switch between branches.
 - Engineer conflict in "tracking-changes.md" to make sure that they pull remote changes before pushing.
     - `git pull --no-rebase`
+- Branches: introduce when fixing problem in example repo
+    - Checkout new branch, apply change, make PR
+- On "cloning-a-repository.md"
+    - Clone repo, run code, doesn't work, revert to previous commit, code works
+    - Revert back to breaking commit, checkout new branch, apply fix on new commit, try to push `git push -u origin dev`, doesn't work
+    - Move on to "forking-a-repository.md", fork on GitHub, update remote, push new branch to remote, open PR
