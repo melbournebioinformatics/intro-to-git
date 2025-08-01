@@ -2,36 +2,39 @@
 title: Setup
 ---
 
-FIXME: Setup instructions live in this document. Please specify the tools and
-the data sets the Learner needs to have installed.
+This lesson will teach you how to manage software projects with the popular version control system *Git*.
 
-## Data Sets
+The example project will assume a basic understanding of either Python or R, and learners are expected to be comfortable using simple commands in a Bash shell.
 
-<!--
-FIXME: place any data you want learners to use in `episodes/data` and then use
-       a relative link ( [data zip file](data/lesson-data.zip) ) to provide a
-       link to it, replacing the example.com link.
--->
-Download the [data zip file](https://example.com/FIXME) and unzip it to your Desktop
+The lesson assumes learners are working with a Linux style shell (i.e. zsh on MacOS or GitBash on Windows) inside the *VS Code* IDE.
 
-## Software Setup
+It is important that students complete these setup tasks before the workshop.
+
+
+## Environment Management with Conda
 
 ::::::::::::::::::::::::::::::::::::::: discussion
 
 ### Details
 
-Setup for different systems can be presented in dropdown menus via a `spoiler`
-tag. They will join to this discussion block, so you can give a general overview
-of the software used in this lesson here and fill out the individual operating
-systems (and potentially add more, e.g. online setup) in the solutions blocks.
+In this workshop we will use `conda` to manage Python environments and install packages.
+
+Our preferred flavour of `conda` is provided by Miniforge3, but you could also use `Miniconda`.
+
+
 
 :::::::::::::::::::::::::::::::::::::::::::::::::::
+
+
 
 :::::::::::::::: spoiler
 
 ### Windows
 
-Use PuTTY
+After installing miniforge you will use `conda` from within the `GitBash` shell to manage environments and software instalation. See "Installing Git" below.
+
+1. Install the latest version of [Miniforge3](https://conda-forge.org/miniforge/#latest-release)
+2. Open the `miniforge prompt` app and run the command `conda init bash`
 
 ::::::::::::::::::::::::
 
@@ -39,16 +42,113 @@ Use PuTTY
 
 ### MacOS
 
-Use Terminal.app
+1. Install the latest version of [Miniforge3](https://conda-forge.org/miniforge/#latest-release)
+
+Note: Select the "x86_64" for Intel processors, or "Arm64" for Apple Silicon chips.  
+
+Check installation:
+
+- Open the `Terminal` app.
+- Check for `(base)` prefix in your prompt.
+- Run `conda --version`
+
+
+::::::::::::::::::::::::
+
+
+## Installing Git
+
+
+:::::::::::::::: spoiler
+
+### Windows
+
+Windows users will need to install `GitBash` which is a linux-like terminal that comes pre-installed with `Git`.
+
+You will use `conda` from within the `GitBash` shell to manage environments and software instalation.
+
+1. Install [GitBash](https://gitforwindows.org/)
+
+Windows checks:
+
+- Open the `GitBash` terminal app.
+- Check for `(base)` prefix in your prompt.
+- If `(base)` is not present, open the "miniforge prompt" app and run `conda init bash`
+- Open a new `GitBash` terminal session.
+- Run `conda --version`
+- Run `git --version`
 
 ::::::::::::::::::::::::
 
 
 :::::::::::::::: spoiler
 
-### Linux
+### Mac
 
-Use Terminal
+Open the Terminal app and run `git --version`. You may be prompted to install git.
+
+Note: You may be prompted to install Xcode which will take some time.
 
 ::::::::::::::::::::::::
 
+
+## Configure Git
+
+If you are setting up Git for the first time, you will need to set your user name and email.
+
+**IMPORTANT:**
+
+- You must use same email as your github account.
+- You should use an email address that you will always have access to (not a work or university address).
+
+```bash
+git config --global user.name "Alfredo Linguini"
+git config --global user.email "a.linguini@gmail.com"
+```
+
+Please use your own name and email address instead of Alfredo's. And make sure you use the same email associated with your GitHub account.
+
+We will also set the default editor as `nano`.
+
+```bash
+git config --global core.editor "nano -w"
+```
+
+## Setup Github
+
+### Create a GitHub account
+
+Create a new account at [GitHub.com](github.com}) if you do not have one.
+
+Again, use an email address that you will always have access to (not a work or university address).
+
+### Configure SSH access
+
+If you do not have ssh set up for git [create a new ssh key](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent) and [add the key](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account) to your github account.
+
+Note: On windows you should do this from the GitBash shell.
+
+To confirm that your key is correctly configured run:
+
+```bash
+ssh -T git@github.com
+```
+
+## VS Code setup
+
+VS Code is a popular Interactive Development Environment (IDE) that we will use to edit our project.
+
+Install:
+- [VS Code](https://code.visualstudio.com/Download)
+
+:::::::::::::::: spoiler
+
+### Windows
+
+Open VS Code and set GitBash as default terminal.
+
+From the `View` menu select `Command Pallate --> Terminal: Select Default Profile`.
+
+Then select `GitBash` as the default profile.
+
+::::::::::::::::::::::::
