@@ -2,6 +2,11 @@
 title: 'Instructor Notes'
 ---
 
+Additional notes:
+- Should we do the whole workshop through the VS Code extension? Just reference the commands but don't actually teach them.
+- Add the command "on the side"
+- RE-DO section on pull requests and conflicts
+
 Notes about this workshop:
 
 - Make sure that Windows users use Git Bash for their commands.
@@ -19,3 +24,4 @@ TO-DO notes from sprint 01/08/2025
 - Introduce branches in "tracking-changes.md" as well. Switch between branches.
 - Engineer conflict in "tracking-changes.md" to make sure that they pull remote changes before pushing.
     - `git pull --no-rebase`
+  
