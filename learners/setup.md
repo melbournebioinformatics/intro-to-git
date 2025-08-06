@@ -138,17 +138,16 @@ ssh -T git@github.com
 
 VS Code is a popular Interactive Development Environment (IDE) that we will use to edit our project.
 
-Install:
-- [VS Code](https://code.visualstudio.com/Download)
+[Follow the VS Code installation instructions here.](https://code.visualstudio.com/Download)
+
+If you are on Windows, also follow the steps below:
 
 :::::::::::::::: spoiler
 
 ### Windows
 
-Open VS Code and set GitBash as default terminal.
-
-From the `View` menu select `Command Pallate --> Terminal: Select Default Profile`.
-
-Then select `GitBash` as the default profile.
+1. Open VS Code and set GitBash as default terminal.
+2. From the `View` menu select `Command Palette --> Terminal: Select Default Profile`.
+3. Then select `GitBash` as the default profile.
 
 ::::::::::::::::::::::::
