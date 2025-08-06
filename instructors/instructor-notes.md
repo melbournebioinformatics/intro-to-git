@@ -16,6 +16,7 @@ Notes about this workshop:
 - Windows users can struggle with cloning the R repository because Windows doesn't find the Rscript executable.
 - In "`cloning-a-repository.md`", follow steps carefully and in order to avoid problems.
 - Practice more switching between branches/commits (`git checkout` command).
+    - **This can be done in the `cloning-a-repository.md` episode.** Instead of using `git reset --soft HEAD~1`, we can use `git checkout`, see if the code works, then check back to HEAD (which is broken), and apply the fix
 
 TO-DO notes from sprint 01/08/2025
 - Rearrange "your-first-git-repository.md" to first create on GitHub, and then clone.
