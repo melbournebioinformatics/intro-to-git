@@ -1,10 +1,10 @@
 ---
-title: 'Tracking changes'
+title: "Tracking changes"
 teaching: 20
 exercises: 0
 ---
 
-:::::::::::::::::::::::::::::::::::::: questions 
+:::::::::::::::::::::::::::::::::::::: questions
 
 - How do we create a Git repository?
 - What are some of the basic Git commands?
@@ -28,18 +28,18 @@ touch README.md
 
 The `touch` command creates an empty file. We will be formatting our README file in [Markdown](https://www.markdownguide.org/). If you haven't heard of Markdown, basically it's a simple, easy-to-use language [markup language](https://en.wikipedia.org/wiki/Markup_language) which GitHub fully supports.
 
-::::::::::::::::::::::::::::::::::::: prereq 
-    
-Markdown files are plain text files. Even though Markdown has a range of features (such as acting as an extension of HTML), we can stick to the basics:  
+::::::::::::::::::::::::::::::::::::: prereq
+
+Markdown files are plain text files. Even though Markdown has a range of features (such as acting as an extension of HTML), we can stick to the basics:
 
 - `#` creates Level 1 Headings (usually the page title).
 - `##` creates Level 2 Headings (usually the different sections in the page).
 - Subsequent Heading levels can be created with `###`, `####`, etc.
-- Backticks (\`\`) create  `mono-spaced text, useful for formatting code.`
-- ** **Bold text is written with double-asterisks.** **
-- *\*Italics is written with a single-asterisk.\**
+- Backticks (\`\`) create `mono-spaced text, useful for formatting code.`
+- \*\* **Bold text is written with double-asterisks.** \*\*
+- \*\*Italics is written with a single-asterisk.\*\*
 
-::::::::::::::::::::::::::::::::::::: 
+:::::::::::::::::::::::::::::::::::::
 
 Now open `README.md` on your favourite text editor, such as VS Code, nano, Vim, or good old Notepad, and let's
 add some content (we recommend that you use VS Code):
@@ -101,6 +101,7 @@ Depending on the version of Git you have, the output may be slightly different. 
 ```bash
 git commit -m "Add repository README"
 ```
+
 ```output
 [main (root-commit) 62a9ebb] Add repository README
  1 file changed, 4 insertions(+)
@@ -109,13 +110,13 @@ git commit -m "Add repository README"
 
 The `git commit` command effectively records the changes that we made and added to the staging area **into the repository history.** Now, we've created another snapshot of the repository, one that has the changes that we've made, compared to the previous one where the repository was empty.
 
-::::::::::::::::::::::::::::::::::::: callout 
+::::::::::::::::::::::::::::::::::::: callout
 
 **Commit Messages**
 
-The `-m` in the `git commit` command means `--message`, that is, the message associated with that particular commit. **You should always write descriptive messages** of what has been done in a particular commit. 
+The `-m` in the `git commit` command means `--message`, that is, the message associated with that particular commit. **You should always write descriptive messages** of what has been done in a particular commit.
 
-After all, one of the reasons of why Git is so powerful and adopted is that it allows you to document your work as you go, and this is largely done by writing (good) commit messages. This may seem a bit excessive at first, such as having to write something everytime you press "Save" on a Word document, but as your project grows and you add more and more code to it, it's important to be able to see what has been done in each commit. You can also just type `git commit` without the `-m`, in this case a text editor will pop up in the Terminal prompting you to write a commit message. 
+After all, one of the reasons of why Git is so powerful and adopted is that it allows you to document your work as you go, and this is largely done by writing (good) commit messages. This may seem a bit excessive at first, such as having to write something everytime you press "Save" on a Word document, but as your project grows and you add more and more code to it, it's important to be able to see what has been done in each commit. You can also just type `git commit` without the `-m`, in this case a text editor will pop up in the Terminal prompting you to write a commit message.
 
 We will learn **how to write good commit messages** later on in this lesson. But basically we want to describe **what** we changed and **why** we changed it.
 
@@ -154,16 +155,15 @@ The `git log` command shows a list of our commits. We can see the commit **check
 
 :::::::::::::::::::::::::::::::::::::
 
-et's modify the `README.md` file again and add some new lines:
+Let's modify the `README.md` file again and add some new lines:
 
-```output hl_lines="5 6"
-# 'gitgood' repository                                                                              
-                                                                                                    
+````output hl_lines="5 6"
+# 'gitgood' repository
+
 A repository to learn how to use Git.
 
 ## Section 1
 How to git good at version control.
-```
 
 We've added the `## Section 1` which will represent a new section of text in our Markdown document, and added a little bit of normal text underneath it.
 
@@ -171,7 +171,8 @@ Let's see how this affects our repository by running `git status` again:
 
 ```bash
 git status
-```
+````
+
 ```output
 On branch main
 Changes not staged for commit:
@@ -182,13 +183,13 @@ Changes not staged for commit:
 no changes added to commit (use "git add" and/or "git commit -a")
 ```
 
-Now that Git is keeping track of `README.md`, any changes that we make to the file will be tracked, so Git knows that we modified the file and added some lines to it. The same goes for when we delete lines from a file. 
+Now that Git is keeping track of `README.md`, any changes that we make to the file will be tracked, so Git knows that we modified the file and added some lines to it. The same goes for when we delete lines from a file.
 
 ::::::::::::::::::::::::::::::::::::: caution
 
 Git will only detect differences in files which have been previously committed to the history. If the file is **untracked**, like `README.md` was before our first commit, Git will not record any changes. Be mindful of this, because if you make changes to untracked files, you may not be able to revert them to a previous version!
 
-::::::::::::::::::::::::::::::::::::: 
+:::::::::::::::::::::::::::::::::::::
 
 he `git status` command shows that `README.md` was modified, but let's have a look at **what specific changes happened**. We can do this by running a new command:
 
@@ -202,9 +203,9 @@ index 24e122d..e96d76a 100644
 --- a/README.md
 +++ b/README.md
 @@ -2,3 +2,5 @@
- 
+
  A repository to learn how to use Git.
- 
+
 +## Section 1
 +How to git good at version control.
 ```
@@ -242,16 +243,15 @@ Date:   Mon Sep 9 14:58:43 2024 +1000
 
 **Well done!** You've learned 6 new commands, and the fundamentals of version control. With this alone, you can start tracking changes in your local repository. Next, we are going to learn how to interact with GitHub, based on what we've done so far.
 
-::::::::::::::::::::::::::::::::::::: keypoints 
+::::::::::::::::::::::::::::::::::::: keypoints
 
 We learned several new commands. Let's take note of them:
 
 - `git init` initialises a Git repository, which is contained within the hidden `.git` directory.
-- `git status` shows the current state of the repository, such as *which files have been changed.*
+- `git status` shows the current state of the repository, such as _which files have been changed._
 - `git add` adds a file to the **staging area**, where we gather all of the changes that will be committed.
 - `git commit` writes the changes to history, permanently recording them to the repository.
 - `git log` shows the list of commits in the repository.
-- `git diff` shows the changes between the last commit and the current repository, showing *how files have been changed*.
+- `git diff` shows the changes between the last commit and the current repository, showing _how files have been changed_.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
-
