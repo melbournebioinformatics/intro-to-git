@@ -43,7 +43,7 @@ Clone your chosen repository locally using the `git clone` command.
 
 This copies the remote's URL to your clipboard.
 
-2. Navigate to a suitable directory (**not** inside our previous `gitgood` repository), such as the Documents directory, and run `git clone <URL>`
+2. Navigate to a suitable directory (**not** inside our previous `gitgood` repository), such as the Desktop directory, and run `git clone <URL>`
 
 ![](fig/clone_repo_cli.png)
 
