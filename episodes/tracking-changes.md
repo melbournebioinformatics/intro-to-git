@@ -157,13 +157,14 @@ The `git log` command shows a list of our commits. We can see the commit **check
 
 Let's modify the `README.md` file again and add some new lines:
 
-````output hl_lines="5 6"
+```
 # 'gitgood' repository
 
 A repository to learn how to use Git.
 
 ## Section 1
 How to git good at version control.
+```
 
 We've added the `## Section 1` which will represent a new section of text in our Markdown document, and added a little bit of normal text underneath it.
 
@@ -171,7 +172,7 @@ Let's see how this affects our repository by running `git status` again:
 
 ```bash
 git status
-````
+```
 
 ```output
 On branch main
