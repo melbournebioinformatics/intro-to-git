@@ -721,7 +721,7 @@ any links that you are not going to use.
  -->
 </div></section><section id="aio-fundamental-concepts"><p>Content from <a href="fundamental-concepts.html">Fundamental concepts</a></p>
 <hr>
-<p>Last updated on 2025-08-01 |
+<p>Last updated on 2025-08-13 |
 
         <a href="https://github.com/melbournebioinformatics/intro-to-git/edit/main/episodes/fundamental-concepts.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 <div class="text-end">
@@ -772,13 +772,14 @@ pulling their changes into your local project.</p>
 <div class="section level3">
 <h3 id="staging-area">Staging area<a class="anchor" aria-label="anchor" href="#staging-area"></a>
 </h3>
-<p>The staging area in Git is like a “waiting room” for changes you want
-to commit. When you modify files, those changes don’t go directly into a
-commit. Instead, you first add them to the staging area, where you can
-review and decide what will be included in your next commit. It gives
-you control to commit only specific changes rather than everything at
-once. Think of it as preparing ingredients on the counter before putting
-them into a recipe—you only add what you need.</p>
+<p>If we think of a commit as a transaction, the staging area in Git is
+like a “shopping cart” for the changes you want to commit. When you
+modify files, those changes don’t go directly into a commit. Instead,
+you first add them to the staging area, where you can review and decide
+what will be included in your next commit. It gives you control to
+commit only specific changes rather than everything at once. Think of it
+as preparing ingredients on the counter before putting them into a
+recipe—you only add what you need.</p>
 <figure><img src="fig/git-staging-area.svg" class="figure mx-auto d-block"></figure>
 </div>
 <div class="section level3">
@@ -816,7 +817,7 @@ any links that you are not going to use.
  -->
 </div></section><section id="aio-your-first-git-repository"><p>Content from <a href="your-first-git-repository.html">Your first Git repository</a></p>
 <hr>
-<p>Last updated on 2025-07-14 |
+<p>Last updated on 2025-08-13 |
 
         <a href="https://github.com/melbournebioinformatics/intro-to-git/edit/main/episodes/your-first-git-repository.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 <div class="text-end">
@@ -854,13 +855,13 @@ any links that you are not going to use.
 <p>Now that we’ve learned the basics of version control, and reasons to
 use it, let’s get some hands-on experience on how to create our first
 Git repository.</p>
-<p>Let’s start navigating to the Documents folder and creating a new
+<p>Let’s start navigating to the Desktop folder and creating a new
 directory there.</p>
 <div class="codewrapper sourceCode" id="cb1">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" tabindex="-1"></a><span class="bu">cd</span></span>
-<span id="cb1-2"><a href="#cb1-2" tabindex="-1"></a><span class="bu">cd</span> Documents</span>
+<span id="cb1-2"><a href="#cb1-2" tabindex="-1"></a><span class="bu">cd</span> Desktop</span>
 <span id="cb1-3"><a href="#cb1-3" tabindex="-1"></a><span class="fu">mkdir</span> gitgood</span>
 <span id="cb1-4"><a href="#cb1-4" tabindex="-1"></a><span class="bu">cd</span> gitgood</span></code></pre>
 </div>
@@ -875,7 +876,7 @@ start a new repository with the following command:</p>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="output" tabindex="0"><code>Initialized empty Git repository in /home/username/Documents/gitgood/.git/</code></pre>
+<pre class="output" tabindex="0"><code>Initialized empty Git repository in /home/username/Desktop/gitgood/.git/</code></pre>
 </div>
 <p>If we try to list the files in the repository, we can’t see anything.
 Try again with the <code>-a</code> option:</p>
@@ -923,7 +924,7 @@ mean, how can we find out?<br>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1"> Show me the solution </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
 <div class="accordion-body">
 <ol style="list-style-type: decimal">
 <li>By default, <code>ls</code> does not display hidden files (starting
@@ -940,7 +941,7 @@ for the command in the man pages, for example by typing
 </li>
 <li>The <code>.</code> and <code>..</code> files respectively refer to
 the current directory and the directory one level above (the
-<code>Documents</code>, in this case).</li>
+<code>Desktop</code>, in this case).</li>
 </ol>
 </div>
 </div>
@@ -1547,7 +1548,7 @@ any links that you are not going to use.
  -->
 </div></section><section id="aio-cloning-a-repository"><p>Content from <a href="cloning-a-repository.html">Cloning a repository</a></p>
 <hr>
-<p>Last updated on 2025-07-14 |
+<p>Last updated on 2025-08-13 |
 
         <a href="https://github.com/melbournebioinformatics/intro-to-git/edit/main/episodes/cloning-a-repository.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 <div class="text-end">
@@ -1615,7 +1616,7 @@ repository’s contents.</li>
 <figure><img src="fig/clone_repo_gh.png" class="figure mx-auto d-block"></figure><p>This copies the remote’s URL to your clipboard.</p>
 <ol start="2" style="list-style-type: decimal">
 <li>Navigate to a suitable directory (<strong>not</strong> inside our
-previous <code>gitgood</code> repository), such as the Documents
+previous <code>gitgood</code> repository), such as the Desktop
 directory, and run <code>git clone &lt;URL&gt;</code>
 </li>
 </ol>
@@ -1908,7 +1909,7 @@ your hand or put up a green post-it when you are done.</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1"> Show me the solution </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
 <div class="accordion-body">
 <div class="tabs">
 <nav><div id="nav-tab-5" class="nav nav-tabs" role="tablist">
@@ -2061,13 +2062,13 @@ repository:</p>
 </button>
 </div>
 </nav><div id="nav-tabContent-1" class="tab-content">
-<div id="nav-tabpanel-1-1" class="tab-pane show active" role="tabpanel" aria-labelledby="nav-tab-1-1">
+<div id="nav-tabpanel-1-1" class="tab-pane show active" aria-labelledby="nav-tab-1-1" role="tabpanel">
 <p>Simply delete the local repository (with the
 <code>rm -rf &lt;DIRECTORY_NAME&gt;</code> or right-click the directory
 and delete it), and clone it again, using the same approach that we used
 before.</p>
 </div>
-<div id="nav-tabpanel-1-2" class="tab-pane" role="tabpanel" aria-labelledby="nav-tab-1-2">
+<div id="nav-tabpanel-1-2" class="tab-pane" aria-labelledby="nav-tab-1-2" role="tabpanel">
 <p>If you ran the <code>git remote -v</code> command from inside the
 original repository that you cloned, you will have seen that it shows
 the remote URL of the repository, which you do not have access to. You

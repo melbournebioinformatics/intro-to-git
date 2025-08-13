@@ -403,46 +403,44 @@
         <h1>Instructor Notes</h1>
         
 
-<p>Additional notes: - Should we do the whole workshop through the VS
-Code extension? Just reference the commands but don’t actually teach
-them. - Add the command “on the side” - RE-DO section on pull requests
-and conflicts</p>
-<p>Notes about this workshop:</p>
-<ul>
-<li>Make sure that Windows users use Git Bash for their commands.</li>
-<li>Use VS Code – it’s better than teaching nano. If possible, avoid
-nano entirely.</li>
-<li>Present graph model of commits early on - can use this repository as
-example.
-<ul>
-<li>Use VS Code Git tab for that.</li>
-</ul>
-</li>
-<li>Windows users can struggle with cloning the R repository because
-Windows doesn’t find the Rscript executable.</li>
-<li>In “<code>cloning-a-repository.md</code>”, follow steps carefully
-and in order to avoid problems.</li>
-<li>Practice more switching between branches/commits
-(<code>git checkout</code> command).
-<ul>
-<li>
-<strong>This can be done in the <code>cloning-a-repository.md</code>
-episode.</strong> Instead of using <code>git reset --soft HEAD~1</code>,
-we can use <code>git checkout</code>, see if the code works, then check
-back to HEAD (which is broken), and apply the fix</li>
-</ul>
-</li>
-</ul>
-<p>TO-DO notes from sprint 01/08/2025 - Rearrange
-“your-first-git-repository.md” to first create on GitHub, and then
-clone. - This allows to keep learners “fresh” and not burden them with
-concepts of remotes. - “tracking-changes.md”: do enough changes that we
-revert both an individual file and also the whole repository. For the
-whole repository it would be good to revert to a state where certain
-files don’t exist anymore (easier to visualise) - Introduce branches in
+<p>TO-DOs: - Should we do the whole workshop through the VS Code
+extension? Just reference the commands but don’t actually teach them. -
+Add the command “on the side” - RE-DO section on pull requests and
+conflicts</p>
+<p>General notes: - Make sure that Windows users use Git Bash for their
+commands. - Use VS Code – it’s better than teaching nano. If possible,
+avoid nano entirely. - Present graph model of commits early on - can use
+this repository as example. - Use VS Code Git tab for that. - Windows
+users can struggle with cloning the R repository because Windows doesn’t
+find the Rscript executable. - In
+“<code>cloning-a-repository.md</code>”, follow steps carefully and in
+order to avoid problems. - Practice more switching between
+branches/commits (<code>git checkout</code> command). - <strong>This can
+be done in the <code>cloning-a-repository.md</code> episode.</strong>
+Instead of using <code>git reset --soft HEAD~1</code>, we can use
+<code>git checkout</code>, see if the code works, then check back to
+HEAD (which is broken), and apply the fix</p>
+<p>Workshop 07/08/2025: - Check git config (username and email) at the
+start (along with ssh -T command) - Add callout box about branch names
+(main vs master) - Checkout individual file in `python_gc_content - Make
+sure to wind fork back to commit id</p>
+<p>Sprint 01/08/2025: - Rearrange “your-first-git-repository.md” to
+first create on GitHub, and then clone. - This allows to keep learners
+“fresh” and not burden them with concepts of remotes. -
+“tracking-changes.md”: do enough changes that we revert both an
+individual file and also the whole repository. For the whole repository
+it would be good to revert to a state where certain files don’t exist
+anymore (easier to visualise) - Introduce branches in
 “tracking-changes.md” as well. Switch between branches. - Engineer
 conflict in “tracking-changes.md” to make sure that they pull remote
-changes before pushing. - <code>git pull --no-rebase</code></p>
+changes before pushing. - <code>git pull --no-rebase</code> - Branches:
+introduce when fixing problem in example repo - Checkout new branch,
+apply change, make PR - On “cloning-a-repository.md” - Clone repo, run
+code, doesn’t work, revert to previous commit, code works - Revert back
+to breaking commit, checkout new branch, apply fix on new commit, try to
+push <code>git push -u origin dev</code>, doesn’t work - Move on to
+“forking-a-repository.md”, fork on GitHub, update remote, push new
+branch to remote, open PR</p>
 <!--
 Place links that you need to refer to multiple times across pages here. Delete
 any links that you are not going to use.
