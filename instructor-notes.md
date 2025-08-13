@@ -2,13 +2,12 @@
 title: 'Instructor Notes'
 ---
 
-Additional notes:
+TO-DOs:
 - Should we do the whole workshop through the VS Code extension? Just reference the commands but don't actually teach them.
 - Add the command "on the side"
 - RE-DO section on pull requests and conflicts
 
-Notes about this workshop:
-
+General notes:
 - Make sure that Windows users use Git Bash for their commands.
 - Use VS Code – it's better than teaching nano. If possible, avoid nano entirely.
 - Present graph model of commits early on - can use this repository as example.
@@ -18,11 +17,22 @@ Notes about this workshop:
 - Practice more switching between branches/commits (`git checkout` command).
     - **This can be done in the `cloning-a-repository.md` episode.** Instead of using `git reset --soft HEAD~1`, we can use `git checkout`, see if the code works, then check back to HEAD (which is broken), and apply the fix
 
-TO-DO notes from sprint 01/08/2025
+Workshop 07/08/2025:
+- Check git config (username and email) at the start (along with ssh -T command)
+- Add callout box about branch names (main vs master)
+- Checkout individual file in `python_gc_content
+- Make sure to wind fork back to commit id
+
+Sprint 01/08/2025:
 - Rearrange "your-first-git-repository.md" to first create on GitHub, and then clone.
 - This allows to keep learners "fresh" and not burden them with concepts of remotes.
 - "tracking-changes.md": do enough changes that we revert both an individual file and also the whole repository. For the whole repository it would be good to revert to a state where certain files don't exist anymore (easier to visualise)
 - Introduce branches in "tracking-changes.md" as well. Switch between branches.
 - Engineer conflict in "tracking-changes.md" to make sure that they pull remote changes before pushing.
     - `git pull --no-rebase`
-  
+- Branches: introduce when fixing problem in example repo
+    - Checkout new branch, apply change, make PR
+- On "cloning-a-repository.md"
+    - Clone repo, run code, doesn't work, revert to previous commit, code works
+    - Revert back to breaking commit, checkout new branch, apply fix on new commit, try to push `git push -u origin dev`, doesn't work
+    - Move on to "forking-a-repository.md", fork on GitHub, update remote, push new branch to remote, open PR
