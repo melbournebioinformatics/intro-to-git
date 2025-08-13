@@ -20,11 +20,11 @@ exercises: 1
 
 Now that we've learned the basics of version control, and reasons to use it, let's get some hands-on experience on how to create our first Git repository.
 
-Let's start navigating to the Documents folder and creating a new directory there.
+Let's start navigating to the Desktop folder and creating a new directory there.
 
 ```bash
 cd
-cd Documents
+cd Desktop
 mkdir gitgood
 cd gitgood
 ```
@@ -38,7 +38,7 @@ git init
 You should see a message like this:
 
 ```output
-Initialized empty Git repository in /home/username/Documents/gitgood/.git/
+Initialized empty Git repository in /home/username/Desktop/gitgood/.git/
 ```
 
 If we try to list the files in the repository, we can't see anything. Try again with the `-a` option:
@@ -72,7 +72,7 @@ Based on your previous knowledge of UNIX command line, try answering the followi
 1. By default, `ls` does not display hidden files (starting with a `.` character). The `.git` directory hidden by default when we create it.  
 2. `-a` shows **all** of the files and directories, including hidden ones.  
 3. If we don't know what a command-line flag means, we can try looking for the command in the man pages, for example by typing `man ls`.  
-4. The `.` and `..` files respectively refer to the current directory and the directory one level above (the `Documents`, in this case).
+4. The `.` and `..` files respectively refer to the current directory and the directory one level above (the `Desktop`, in this case).
 
 :::::::::::::::::::::::::::::::::::::
 
