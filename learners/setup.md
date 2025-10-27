@@ -2,39 +2,64 @@
 title: Setup
 ---
 
-This lesson will teach you how to manage software projects with the popular version control system *Git*.
+Please follow the steps below and install the required software **before** the scheduled workshop.
 
-The example project will assume a basic understanding of either Python or R, and learners are expected to be comfortable using simple commands in a Bash shell.
+<!--
+FIXME: Setup instructions live in this document. Please specify the tools and
+the data sets the Learner needs to have installed.
 
-The lesson assumes learners are working with a Linux style shell (i.e. zsh on MacOS or GitBash on Windows) inside the *VS Code* IDE.
+## Data Sets
 
-It is important that students complete these setup tasks before the workshop.
+FIXME: place any data you want learners to use in `episodes/data` and then use
+       a relative link ( [data zip file](data/lesson-data.zip) ) to provide a
+       link to it, replacing the example.com link.
+Download the [data zip file](https://example.com/FIXME) and unzip it to your Desktop
+-->
+## Software Setup
 
+We use VS Code for general coding. Make sure to install VS Code for your operating system following the instructions below:
 
-## Environment Management with Conda
-
-::::::::::::::::::::::::::::::::::::::: discussion
-
-### Details
-
-In this workshop we will use `conda` to manage Python environments and install packages.
-
-Our preferred flavour of `conda` is provided by Miniforge3, but you could also use `Miniconda`.
-
-
-
-:::::::::::::::::::::::::::::::::::::::::::::::::::
+- [Windows](https://code.visualstudio.com/docs/setup/windows)
+- [macOS](https://code.visualstudio.com/docs/setup/mac)
+- [Linux](https://code.visualstudio.com/docs/setup/linux)
 
 
+::::::::::::::::: discussion
 
+### Windows users
+
+If you are a Windows user, you may also need WSL, the Windows Subsystem for Linux. WSL will allow you to use the Terminal from within VS Code and to execute UNIX style commands.
+
+Follow the [official instructions here.](https://learn.microsoft.com/en-us/windows/wsl/install)
+
+After installing WSL, you will also need to install [GitBash](https://gitforwindows.org/).
+
+After installing GitBash, change the default Terminal executable on VS Code:
+
+1. Open VS Code.
+2. From the `View` menu select `Command Palette --> Terminal: Select Default Profile`.
+3. Select `GitBash` as the default profile.
+
+✅ You're all set to use VS Code with GitBash on Windows. 
+
+::::::::::::::::::::::::::::
+
+
+<!--
+READ HERE FOR OS-SPECIFIC INSTRUCTIONS
+
+Setup for different systems can be presented in dropdown menus via a `spoiler`
+tag. They will join to this discussion block, so you can give a general overview
+of the software used in this lesson here and fill out the individual operating
+systems (and potentially add more, e.g. online setup) in the solutions blocks.
+-->
+
+<!--
 :::::::::::::::: spoiler
 
 ### Windows
 
-After installing miniforge you will use `conda` from within the `GitBash` shell to manage environments and software instalation. See "Installing Git" below.
-
-1. Install the latest version of [Miniforge3](https://conda-forge.org/miniforge/#latest-release)
-2. Open the `miniforge prompt` app and run the command `conda init bash`
+Use PuTTY
 
 ::::::::::::::::::::::::
 
@@ -42,22 +67,22 @@ After installing miniforge you will use `conda` from within the `GitBash` shell 
 
 ### MacOS
 
-1. Install the latest version of [Miniforge3](https://conda-forge.org/miniforge/#latest-release)
-
-Note: Select the "x86_64" for Intel processors, or "Arm64" for Apple Silicon chips.  
-
-Check installation:
-
-- Open the `Terminal` app.
-- Check for `(base)` prefix in your prompt.
-- Run `conda --version`
-
+Use Terminal.app
 
 ::::::::::::::::::::::::
 
 
-## Installing Git
+:::::::::::::::: spoiler
 
+### Linux
+
+Use Terminal
+
+::::::::::::::::::::::::
+-->
+
+
+## Installing Git
 
 :::::::::::::::: spoiler
 
@@ -83,11 +108,20 @@ Windows checks:
 
 :::::::::::::::: spoiler
 
-### Mac
+### macOS
 
 Open the Terminal app and run `git --version`. You may be prompted to install git.
 
 Note: You may be prompted to install Xcode which will take some time.
+
+::::::::::::::::::::::::
+
+
+:::::::::::::::: spoiler
+
+### Linux
+
+Your Linux distribution likely comes with Git. If not, [click here and follow the instructions](https://git-scm.com/install/linux).
 
 ::::::::::::::::::::::::
 
@@ -134,20 +168,10 @@ To confirm that your key is correctly configured run:
 ssh -T git@github.com
 ```
 
-## VS Code setup
+## Environment management with conda
 
-VS Code is a popular Interactive Development Environment (IDE) that we will use to edit our project.
+For certain workshops, you may need to install [conda](https://docs.conda.io/en/latest/), an open-source software and package management system. This is usually necessary when working with Python code.
 
-[Follow the VS Code installation instructions here.](https://code.visualstudio.com/Download)
+Our preferred flavour of conda is [miniforge](https://github.com/conda-forge/miniforge), but you could also use [miniconda](https://www.anaconda.com/docs/getting-started/miniconda/main).
 
-If you are on Windows, also follow the steps below:
-
-:::::::::::::::: spoiler
-
-### Windows
-
-1. Open VS Code and set GitBash as default terminal.
-2. From the `View` menu select `Command Palette --> Terminal: Select Default Profile`.
-3. Then select `GitBash` as the default profile.
-
-::::::::::::::::::::::::
+[Click here and follow the miniforge installation instructions for your OS.](https://conda-forge.org/download/)
