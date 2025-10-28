@@ -33,11 +33,15 @@ Although Git is already explicitly designed to work in a distributed manner, mod
 make sharing code with others even easier. If our repository is public, anyone can easily access it, copy, and modify the code as they please.
 You can make your GitHub profile a portfolio of your coding and analysis projects, with a user-friendly interface.
 
+:::::::::::::::::::::::::::::::::::::: discussion
+
 **Packaging and distribution**
 
 Platforms such as GitHub provide a number of features that facilitate **packaging** our code. One thing is to have a bunch of scripts in
 a repository, but if we want to distribute our code effectively, to make it easier for users to acquire and install our code, we can bundle
 it as a **software package** and upload it to platforms such as [PyPI](https://pypi.python.org/) (for Python) or [CRAN](https://cran.r-project.org/) (for R).
+
+::::::::::::::::::::::::::::::::::::::
 
 ### Collaborating
 Sharing code with others is one thing, but Git also enables researchers to work *together* on the same project. You can review other users' commits,
@@ -55,7 +59,7 @@ probably be required if you want to work in coding projects with other people (i
 
 ::::::::::::::::::::::::::::::::::::::
 
-### Documenting your work**  
+### Documenting your work  
 Because changes in Git are structured through commits, it is very straightforward to document our work as we go. Whenever we create a commit,
 we must write a message that's attached to it (we'll learn more about that), which almost mandates that we document what we are doing. This will
 create a [history](../learners/reference.md#glossary) of our work which can effectively be used as a **digital research notebook** if done correctly. The way Git works also allows the creation of [branches](../learners/reference.md#glossary) and [tags](../learners/reference.md#glossary), which can be used to keep track of different parts of the development. This is especially useful for large projects where many people may be working on different things in parallel.

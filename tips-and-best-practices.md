@@ -29,6 +29,28 @@ The second strategy to **take advantage of existing solutions to use Git**. This
 
 The third strategy is to, at the very least, **to think of Git as a backup tool**. Even though you may create backups of your code in platforms like Dropbox or Google Drive, you would have to sync your backups regularly in other to keep track of an evolving code base. By using Git, you can rest assured that you will have a cloud backup of your code, and you can rely on it in case your local machine stops working.
 
+### Ignoring unnecessary files with `.gitignore`
+
+Another important best practice is to **keep your repository clean by using a `.gitignore` file**.  
+This file tells Git which files or folders it should completely ignore — meaning they won’t be tracked or committed.  
+
+For example, you might not want to include:
+
+- temporary files (e.g. `*.log`, `.DS_Store`)  
+- large datasets or binary files  
+- results or plots that can be regenerated  
+- configuration files specific to your computer  
+
+You can create a `.gitignore` file at the root of your repository and list one pattern per line:
+
+```bash
+# Example .gitignore
+data/
+results/
+*.log
+.DS_Store
+```
+
 ::::::::::::::::::::::::::::::::::::: callout
 
 ### When to commit?

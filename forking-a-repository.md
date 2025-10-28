@@ -98,13 +98,12 @@ Conflicts on Git always follow this format, where the conflicting lines have `<<
 
 Erase the lines with `<<<`, `>>>` and `===` to fix the conflict. Make sure your name is the first line on the file, and the name of contributor, the second one. Your file should look like this:
 
-```output linenums="1"
+```output
 - User 1
 - User 2
-
 ```
 
-Click on "Resolve conflicts" and "Commit merge"
+Click on "Resolve conflicts" and "Commit merge":
 
 ![](fig/PR_resolved_conflict.png)
 
