@@ -346,7 +346,7 @@
       </div>
       <hr></nav><main id="main-content" class="main-content"><div class="container lesson-content">
         <h1>Cloning a repository</h1>
-        <p>Last updated on 2025-08-13 |
+        <p>Last updated on 2025-10-28 |
 
         <a href="https://github.com/melbournebioinformatics/intro-to-git/edit/main/episodes/cloning-a-repository.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 
@@ -440,14 +440,14 @@ can clone it and customise it.</p>
 </button>
 </div>
 </nav><div id="nav-tabContent-1" class="tab-content">
-<div id="nav-tabpanel-1-1" class="tab-pane show active" aria-labelledby="nav-tab-1-1" role="tabpanel">
+<div id="nav-tabpanel-1-1" class="tab-pane show active" role="tabpanel" aria-labelledby="nav-tab-1-1">
 <div class="codewrapper sourceCode" id="cb1">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" tabindex="-1"></a><span class="ex">python</span> python_gc_content.py example.fasta</span></code></pre>
 </div>
 </div>
-<div id="nav-tabpanel-1-2" class="tab-pane" aria-labelledby="nav-tab-1-2" role="tabpanel">
+<div id="nav-tabpanel-1-2" class="tab-pane" role="tabpanel" aria-labelledby="nav-tab-1-2">
 <div class="codewrapper sourceCode" id="cb2">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
@@ -471,7 +471,7 @@ can clone it and customise it.</p>
 </button>
 </div>
 </nav><div id="nav-tabContent-2" class="tab-content">
-<div id="nav-tabpanel-2-1" class="tab-pane show active" aria-labelledby="nav-tab-2-1" role="tabpanel">
+<div id="nav-tabpanel-2-1" class="tab-pane show active" role="tabpanel" aria-labelledby="nav-tab-2-1">
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
@@ -481,7 +481,7 @@ can clone it and customise it.</p>
 SyntaxError: '(' was never closed</code></pre>
 </div>
 </div>
-<div id="nav-tabpanel-2-2" class="tab-pane" aria-labelledby="nav-tab-2-2" role="tabpanel">
+<div id="nav-tabpanel-2-2" class="tab-pane" role="tabpanel" aria-labelledby="nav-tab-2-2">
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
@@ -499,45 +499,58 @@ Execution halted</code></pre>
 can fix it ourselves! We wouldn’t know that if it weren’t for a
 descriptive commit message.</p>
 <p>Now, there are two things we could do:</p>
-<ol style="list-style-type: decimal"><li>Revert back to the previous commit. After all, version control would
-not be useful if we could not go back to a previous, working version of
-our code.</li>
+<ol style="list-style-type: decimal"><li>Go back to the previous commit to inspect the working version of the
+code.<br></li>
 <li>Fix the code ourselves and commit the changes.</li>
-</ol><p>There are multiple ways to revert changes in Git. Here, we will use
-the <code>git reset</code> command:</p>
+</ol><p>There are multiple ways to move between commits in Git. Here, we will
+use the <code>git checkout</code> command:</p>
 <div class="codewrapper sourceCode" id="cb5">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" tabindex="-1"></a><span class="fu">git</span> reset <span class="at">--soft</span> HEAD~1</span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" tabindex="-1"></a><span class="fu">git</span> checkout HEAD~1</span>
+<span id="cb5-2"><a href="#cb5-2" tabindex="-1"></a></span>
+<span id="cb5-3"><a href="#cb5-3" tabindex="-1"></a><span class="co"># # You could also run the following</span></span>
+<span id="cb5-4"><a href="#cb5-4" tabindex="-1"></a><span class="co"># git checkout 82c8425</span></span></code></pre>
 </div>
-<p>There’s a lot to unpack here. First is the <code>git reset</code>
-command itself. What it does is that it resets the <strong>current
-state</strong> of the repository, also called <code>HEAD</code>, to a
-specified state. In this case, we are resetting to one commit before the
-current state, hence <code>HEAD~1</code>. The <code>--soft</code> flag
-tells the command to undo the commit, but keep the changes in the staged
-area. Let’s run <code>git status</code> to see what it shows:</p>
+<p>This tells Git to “check out” the commit that came just before the
+current one (<code>HEAD~1</code>, or the commit ID
+<code>82c8425</code>). In other words, we’re temporarily moving our
+working directory to the previous commit so we can look at what the code
+was like before it broke. Let’s check the files in our project now —
+you’ll see that the broken code is gone.</p>
+<p>The output message shows that we’re in what Git calls a “detached
+HEAD” state:</p>
 <div class="codewrapper sourceCode" id="cb6">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" tabindex="-1"></a><span class="fu">git</span> status</span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" tabindex="-1"></a><span class="ex">Note:</span> switching to <span class="st">'HEAD~1'</span>.</span>
+<span id="cb6-2"><a href="#cb6-2" tabindex="-1"></a></span>
+<span id="cb6-3"><a href="#cb6-3" tabindex="-1"></a><span class="ex">You</span> are in <span class="st">'detached HEAD'</span> state. You can look around, make experimental</span>
+<span id="cb6-4"><a href="#cb6-4" tabindex="-1"></a><span class="ex">changes</span> and commit them, and you can discard any commits you make in this</span>
+<span id="cb6-5"><a href="#cb6-5" tabindex="-1"></a><span class="ex">state</span> without impacting any branches by switching back to a branch.</span>
+<span id="cb6-6"><a href="#cb6-6" tabindex="-1"></a></span>
+<span id="cb6-7"><a href="#cb6-7" tabindex="-1"></a><span class="ex">If</span> you want to create a new branch to retain commits you create, you may</span>
+<span id="cb6-8"><a href="#cb6-8" tabindex="-1"></a><span class="cf">do</span> <span class="ex">so</span> <span class="er">(</span><span class="ex">now</span> or later<span class="kw">)</span> <span class="ex">by</span> using <span class="at">-c</span> with the switch command. Example:</span>
+<span id="cb6-9"><a href="#cb6-9" tabindex="-1"></a></span>
+<span id="cb6-10"><a href="#cb6-10" tabindex="-1"></a>  <span class="fu">git</span> switch <span class="at">-c</span> <span class="op">&lt;</span>new-branch-name<span class="op">&gt;</span></span>
+<span id="cb6-11"><a href="#cb6-11" tabindex="-1"></a></span>
+<span id="cb6-12"><a href="#cb6-12" tabindex="-1"></a><span class="ex">Or</span> undo this operation with:</span>
+<span id="cb6-13"><a href="#cb6-13" tabindex="-1"></a></span>
+<span id="cb6-14"><a href="#cb6-14" tabindex="-1"></a>  <span class="fu">git</span> switch <span class="at">-</span></span>
+<span id="cb6-15"><a href="#cb6-15" tabindex="-1"></a></span>
+<span id="cb6-16"><a href="#cb6-16" tabindex="-1"></a><span class="ex">Turn</span> off this advice by setting config variable advice.detachedHead to false</span>
+<span id="cb6-17"><a href="#cb6-17" tabindex="-1"></a></span>
+<span id="cb6-18"><a href="#cb6-18" tabindex="-1"></a><span class="ex">HEAD</span> is now at 82c8425 Code is working</span></code></pre>
 </div>
-<pre><code>On branch main
-Your branch is behind 'origin/main' by 1 commit, and can be fast-forwarded.
-  (use "git pull" to update your local branch)
-
-Changes to be committed:
-  (use "git restore --staged &lt;file&gt;..." to unstage)
-        modified:   python_gc_content.py</code></pre>
-<p>The changes from the commit that we reset are staged, but the commit
-itself was undone (you can see with <code>git log</code>). We can see
-exactly what that change was by running <code>git diff --staged</code>,
-which is just like <code>git diff</code> that we learned before, but
-highlights only the changes that are already staged.</p>
-<div class="codewrapper sourceCode" id="cb8">
+<p>This simply means we’re no longer “on” a branch — we’re just viewing
+a past snapshot of the project. From here, we can examine the code or
+even copy the fixed version.</p>
+<p>If you want to see what changed in the broken commit, you can
+use:</p>
+<div class="codewrapper sourceCode" id="cb7">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" tabindex="-1"></a><span class="fu">git</span> diff <span class="at">--staged</span></span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" tabindex="-1"></a><span class="fu">git</span> diff main</span></code></pre>
 </div>
 <div class="tabs">
 <nav><div id="nav-tab-3" class="nav nav-tabs" role="tablist">
@@ -553,7 +566,7 @@ highlights only the changes that are already staged.</p>
 </button>
 </div>
 </nav><div id="nav-tabContent-3" class="tab-content">
-<div id="nav-tabpanel-3-1" class="tab-pane show active" aria-labelledby="nav-tab-3-1" role="tabpanel">
+<div id="nav-tabpanel-3-1" class="tab-pane show active" role="tabpanel" aria-labelledby="nav-tab-3-1">
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
@@ -572,7 +585,7 @@ if __name__ == "__main__":
    main()</code></pre>
 </div>
 </div>
-<div id="nav-tabpanel-3-2" class="tab-pane" aria-labelledby="nav-tab-3-2" role="tabpanel">
+<div id="nav-tabpanel-3-2" class="tab-pane" role="tabpanel" aria-labelledby="nav-tab-3-2">
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
@@ -593,23 +606,18 @@ index abb31f4..e6fe7f0 100644
 </div>
 </div>
 </div>
-<p>We can see that the code broke because, in the previous commit, a
-parenthesis was removed from a line. However, because that change is
-staged, the code remains broken. We can undo the staged change by
-running:</p>
-<div class="codewrapper sourceCode" id="cb11">
+<p>We can see that the code broke because a closing parenthesis was
+removed in the last commit.</p>
+<p>When you’re done inspecting this older version, return to the latest
+state of the project with:</p>
+<div class="codewrapper sourceCode" id="cb10">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb11-1"><a href="#cb11-1" tabindex="-1"></a><span class="fu">git</span> restore <span class="at">--staged</span> <span class="op">&lt;</span>file<span class="op">&gt;</span></span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb10-1"><a href="#cb10-1" tabindex="-1"></a><span class="fu">git</span> checkout main</span></code></pre>
 </div>
-<p>This removes the file from the staging area, but the change is still
-there (you can check it using <code>git status</code>).</p>
-<p>To fully restore the file to its previous state, you can run:</p>
-<div class="codewrapper sourceCode" id="cb12">
-<h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
-</h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb12-1"><a href="#cb12-1" tabindex="-1"></a><span class="fu">git</span> restore <span class="op">&lt;</span>file<span class="op">&gt;</span></span></code></pre>
-</div>
+<p>This brings you back to the most recent commit on your main branch.
+You can now fix the broken code yourself, add your changes, and commit
+them as usual.</p>
 <!-- ::::::::::::::::::::::::::::::::::::: callout
 
 **Git reset alternatives**
@@ -647,18 +655,18 @@ running the code again:</p>
 </button>
 </div>
 </nav><div id="nav-tabContent-4" class="tab-content">
-<div id="nav-tabpanel-4-1" class="tab-pane show active" aria-labelledby="nav-tab-4-1" role="tabpanel">
-<div class="codewrapper sourceCode" id="cb13">
+<div id="nav-tabpanel-4-1" class="tab-pane show active" role="tabpanel" aria-labelledby="nav-tab-4-1">
+<div class="codewrapper sourceCode" id="cb11">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb13-1"><a href="#cb13-1" tabindex="-1"></a><span class="ex">python</span> python_gc_content.py example.fasta</span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb11-1"><a href="#cb11-1" tabindex="-1"></a><span class="ex">python</span> python_gc_content.py example.fasta</span></code></pre>
 </div>
 </div>
-<div id="nav-tabpanel-4-2" class="tab-pane" aria-labelledby="nav-tab-4-2" role="tabpanel">
-<div class="codewrapper sourceCode" id="cb14">
+<div id="nav-tabpanel-4-2" class="tab-pane" role="tabpanel" aria-labelledby="nav-tab-4-2">
+<div class="codewrapper sourceCode" id="cb12">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb14-1"><a href="#cb14-1" tabindex="-1"></a><span class="ex">Rscript</span> R_gc_content.R example.fasta</span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb12-1"><a href="#cb12-1" tabindex="-1"></a><span class="ex">Rscript</span> R_gc_content.R example.fasta</span></code></pre>
 </div>
 </div>
 </div>
@@ -676,10 +684,10 @@ let’s undo what we did by running <code>git reset</code>. By doing that,
 we moved to a previous commit in time. That means that our local copy is
 <strong>one commit behind the remote</strong>. So, we can go back to the
 broken version simply by running:</p>
-<div class="codewrapper sourceCode" id="cb16">
+<div class="codewrapper sourceCode" id="cb14">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb16-1"><a href="#cb16-1" tabindex="-1"></a><span class="fu">git</span> pull</span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb14-1"><a href="#cb14-1" tabindex="-1"></a><span class="fu">git</span> pull</span></code></pre>
 </div>
 <p>This will sync the remote with the local.</p>
 <div id="challenge1" class="callout challenge">
@@ -717,18 +725,18 @@ your hand or put up a green post-it when you are done.</p>
 </button>
 </div>
 </nav><div id="nav-tabContent-5" class="tab-content">
-<div id="nav-tabpanel-5-1" class="tab-pane show active" aria-labelledby="nav-tab-5-1" role="tabpanel">
-<div class="codewrapper sourceCode" id="cb17">
+<div id="nav-tabpanel-5-1" class="tab-pane show active" role="tabpanel" aria-labelledby="nav-tab-5-1">
+<div class="codewrapper sourceCode" id="cb15">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb17-1"><a href="#cb17-1" tabindex="-1"></a><span class="ex">python</span> python_gc_content.py example.fasta</span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb15-1"><a href="#cb15-1" tabindex="-1"></a><span class="ex">python</span> python_gc_content.py example.fasta</span></code></pre>
 </div>
 </div>
-<div id="nav-tabpanel-5-2" class="tab-pane" aria-labelledby="nav-tab-5-2" role="tabpanel">
-<div class="codewrapper sourceCode" id="cb18">
+<div id="nav-tabpanel-5-2" class="tab-pane" role="tabpanel" aria-labelledby="nav-tab-5-2">
+<div class="codewrapper sourceCode" id="cb16">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb18-1"><a href="#cb18-1" tabindex="-1"></a><span class="ex">Rscript</span> R_gc_content.R example.fasta</span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb16-1"><a href="#cb16-1" tabindex="-1"></a><span class="ex">Rscript</span> R_gc_content.R example.fasta</span></code></pre>
 </div>
 </div>
 </div>
@@ -756,11 +764,13 @@ code to GitHub, we need our own copy of the code, so we must
 <ul><li>
 <code>git clone</code> copies a remote repository to our local
 repository.</li>
-<li>There are multiple ways to revert to previous changes, one of them
-is <code>git reset</code>.</li>
 <li>
-<code>HEAD</code> indicates the current state of the
-repository.</li>
+<code>git checkout</code> allows us to move between commits – back
+and forth through a repository’s timeline.</li>
+<li>
+<code>HEAD</code> indicates the current state of the repository.
+<code>HEAD~1</code>, <code>HEAD~2</code> refer to one or two commits
+before the current</li>
 <li>We cannot push to a remote repository if we do not have access to
 it.</li>
 </ul></div>
@@ -832,7 +842,7 @@ any links that you are not going to use.
   "url": "melbournebioinformatics.github.io/uom-varnish/instructor/cloning-a-repository.html",
   "identifier": "melbournebioinformatics.github.io/uom-varnish/instructor/cloning-a-repository.html",
   "dateCreated": "2024-10-01",
-  "dateModified": "2025-08-13",
+  "dateModified": "2025-10-28",
   "datePublished": "2025-10-28"
 }
 

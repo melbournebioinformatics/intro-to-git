@@ -346,7 +346,7 @@
       </div>
       <hr></nav><main id="main-content" class="main-content"><div class="container lesson-content">
         <h1>Tips and best practices</h1>
-        <p>Last updated on 2025-07-14 |
+        <p>Last updated on 2025-10-28 |
 
         <a href="https://github.com/melbournebioinformatics/intro-to-git/edit/main/episodes/tips-and-best-practices.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 
@@ -416,6 +416,31 @@ your backups regularly in other to keep track of an evolving code base.
 By using Git, you can rest assured that you will have a cloud backup of
 your code, and you can rely on it in case your local machine stops
 working.</p>
+</div>
+<div class="section level3">
+<h3 id="ignoring-unnecessary-files-with--gitignore">Ignoring unnecessary files with <code>.gitignore</code>
+<a class="anchor" aria-label="anchor" href="#ignoring-unnecessary-files-with--gitignore"></a></h3>
+<p>Another important best practice is to <strong>keep your repository
+clean by using a <code>.gitignore</code> file</strong>.<br>
+This file tells Git which files or folders it should completely ignore —
+meaning they won’t be tracked or committed.</p>
+<p>For example, you might not want to include:</p>
+<ul><li>temporary files (e.g. <code>*.log</code>,
+<code>.DS_Store</code>)<br></li>
+<li>large datasets or binary files<br></li>
+<li>results or plots that can be regenerated<br></li>
+<li>configuration files specific to your computer</li>
+</ul><p>You can create a <code>.gitignore</code> file at the root of your
+repository and list one pattern per line:</p>
+<div class="codewrapper sourceCode" id="cb1">
+<h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" tabindex="-1"></a><span class="co"># Example .gitignore</span></span>
+<span id="cb1-2"><a href="#cb1-2" tabindex="-1"></a><span class="ex">data/</span></span>
+<span id="cb1-3"><a href="#cb1-3" tabindex="-1"></a><span class="ex">results/</span></span>
+<span id="cb1-4"><a href="#cb1-4" tabindex="-1"></a><span class="ex">*.log</span></span>
+<span id="cb1-5"><a href="#cb1-5" tabindex="-1"></a><span class="ex">.DS_Store</span></span></code></pre>
+</div>
 <div id="when-to-commit" class="callout">
 <div class="callout-square">
 <i class="callout-icon" data-feather="bell"></i>
@@ -580,7 +605,7 @@ any links that you are not going to use.
   "url": "melbournebioinformatics.github.io/uom-varnish/instructor/tips-and-best-practices.html",
   "identifier": "melbournebioinformatics.github.io/uom-varnish/instructor/tips-and-best-practices.html",
   "dateCreated": "2024-10-01",
-  "dateModified": "2025-07-14",
+  "dateModified": "2025-10-28",
   "datePublished": "2025-10-28"
 }
 

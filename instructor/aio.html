@@ -586,7 +586,7 @@ any links that you are not going to use.
 </div>
 </section></section><section id="aio-why-use-git"><p>Content from <a href="why-use-git.html">Why use Git?</a></p>
 <hr>
-<p>Last updated on 2025-07-14 |
+<p>Last updated on 2025-10-28 |
 
         <a href="https://github.com/melbournebioinformatics/intro-to-git/edit/main/episodes/why-use-git.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 <p>Estimated time: <i aria-hidden="true" data-feather="clock"></i> 20 minutes</p>
@@ -646,6 +646,13 @@ even easier. If our repository is public, anyone can easily access it,
 copy, and modify the code as they please. You can make your GitHub
 profile a portfolio of your coding and analysis projects, with a
 user-friendly interface.</p>
+<div id="discussion1" class="callout discussion">
+<div class="callout-square">
+<i class="callout-icon" data-feather="message-circle"></i>
+</div>
+<span class="callout-header">Discussion</span>
+<div class="callout-inner">
+<div class="callout-content">
 <p><strong>Packaging and distribution</strong></p>
 <p>Platforms such as GitHub provide a number of features that facilitate
 <strong>packaging</strong> our code. One thing is to have a bunch of
@@ -654,6 +661,9 @@ effectively, to make it easier for users to acquire and install our
 code, we can bundle it as a <strong>software package</strong> and upload
 it to platforms such as <a href="https://pypi.python.org/" class="external-link">PyPI</a> (for
 Python) or <a href="https://cran.r-project.org/" class="external-link">CRAN</a> (for R).</p>
+</div>
+</div>
+</div>
 </div>
 <div class="section level3">
 <h3 id="collaborating">Collaborating<a class="anchor" aria-label="anchor" href="#collaborating"></a>
@@ -665,7 +675,7 @@ that they propose. This is further enabled by GitHub, which makes it
 easy to do it through the web interface. Moreover, you can create
 organisations to host multiple projects, give collaborators write and
 admin access to projects, and give access to private repositories.</p>
-<div id="discussion1" class="callout discussion">
+<div id="discussion2" class="callout discussion">
 <div class="callout-square">
 <i class="callout-icon" data-feather="message-circle"></i>
 </div>
@@ -686,7 +696,7 @@ and future you!)</p>
 </div>
 </div>
 <div class="section level3">
-<h3 id="documenting-your-work">Documenting your work**<a class="anchor" aria-label="anchor" href="#documenting-your-work"></a>
+<h3 id="documenting-your-work">Documenting your work<a class="anchor" aria-label="anchor" href="#documenting-your-work"></a>
 </h3>
 <p>Because changes in Git are structured through commits, it is very
 straightforward to document our work as we go. Whenever we create a
@@ -725,7 +735,7 @@ any links that you are not going to use.
  -->
 </div></section><section id="aio-fundamental-concepts"><p>Content from <a href="fundamental-concepts.html">Fundamental concepts</a></p>
 <hr>
-<p>Last updated on 2025-08-13 |
+<p>Last updated on 2025-10-28 |
 
         <a href="https://github.com/melbournebioinformatics/intro-to-git/edit/main/episodes/fundamental-concepts.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 <p>Estimated time: <i aria-hidden="true" data-feather="clock"></i> 20 minutes</p>
@@ -741,6 +751,10 @@ any links that you are not going to use.
 <h3 class="card-title">Questions</h3>
 <ul>
 <li>What are the fundamental concepts of version control?</li>
+<li>What are commits?</li>
+<li>What are remotes?</li>
+<li>What is the staging area?</li>
+<li>What are branches?</li>
 </ul>
 </div>
 </div>
@@ -752,6 +766,7 @@ any links that you are not going to use.
 <ul>
 <li>Understand the fundamental concepts of Git, such as commits,
 remotes, and the staging area.</li>
+<li>Be able to explain concepts with the “shopping cart” analogy.</li>
 </ul>
 </div>
 </div>
@@ -788,6 +803,21 @@ recipe—you only add what you need.</p>
 <figure><img src="../fig/git-staging-area.svg" class="figure mx-auto d-block"></figure>
 </div>
 <div class="section level3">
+<h3 id="branches">Branches<a class="anchor" aria-label="anchor" href="#branches"></a>
+</h3>
+<p>Branches are what enable Git to be used as a collaborative tool. They
+are like separate “workbenches” where you can experiment and make
+changes without affecting the main project. Just as the staging area is
+your shopping cart for preparing what goes into a commit, a branch is
+like a separate checkout lane—your own path to develop or test features
+safely. Each branch starts from an existing point in the project’s
+history and can evolve independently, as shown in the graph above: each
+colored line represents a different branch of work. When a branch is
+ready, it can be merged back into the main branch, combining all your
+changes into the shared project history.</p>
+<figure><img src="../fig/branches-graph.png" class="figure mx-auto d-block"></figure>
+</div>
+<div class="section level3">
 <h3 id="using-the-vs-code-extension">Using the VS Code extension<a class="anchor" aria-label="anchor" href="#using-the-vs-code-extension"></a>
 </h3>
 <p>We can see the changes in the VS Code “Source Control” tab. In the
@@ -812,6 +842,9 @@ up or update our local copy.</li>
 <li>The <strong>staging area</strong> is where we keep track of the
 changes that we are going to commit, that is, which are going to be
 written in the repository history.</li>
+<li>
+<strong>Branches</strong> are isolated timelines of a repository,
+where people can work in parallel.</li>
 </ul>
 </div>
 </div>
@@ -1556,7 +1589,7 @@ any links that you are not going to use.
  -->
 </div></section><section id="aio-cloning-a-repository"><p>Content from <a href="cloning-a-repository.html">Cloning a repository</a></p>
 <hr>
-<p>Last updated on 2025-08-13 |
+<p>Last updated on 2025-10-28 |
 
         <a href="https://github.com/melbournebioinformatics/intro-to-git/edit/main/episodes/cloning-a-repository.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 <p>Estimated time: <i aria-hidden="true" data-feather="clock"></i> 22 minutes</p>
@@ -1655,14 +1688,14 @@ can clone it and customise it.</p>
 </button>
 </div>
 </nav><div id="nav-tabContent-1" class="tab-content">
-<div id="nav-tabpanel-1-1" class="tab-pane show active" aria-labelledby="nav-tab-1-1" role="tabpanel">
+<div id="nav-tabpanel-1-1" class="tab-pane show active" role="tabpanel" aria-labelledby="nav-tab-1-1">
 <div class="codewrapper sourceCode" id="cb1">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" tabindex="-1"></a><span class="ex">python</span> python_gc_content.py example.fasta</span></code></pre>
 </div>
 </div>
-<div id="nav-tabpanel-1-2" class="tab-pane" aria-labelledby="nav-tab-1-2" role="tabpanel">
+<div id="nav-tabpanel-1-2" class="tab-pane" role="tabpanel" aria-labelledby="nav-tab-1-2">
 <div class="codewrapper sourceCode" id="cb2">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
@@ -1686,7 +1719,7 @@ can clone it and customise it.</p>
 </button>
 </div>
 </nav><div id="nav-tabContent-2" class="tab-content">
-<div id="nav-tabpanel-2-1" class="tab-pane show active" aria-labelledby="nav-tab-2-1" role="tabpanel">
+<div id="nav-tabpanel-2-1" class="tab-pane show active" role="tabpanel" aria-labelledby="nav-tab-2-1">
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
@@ -1696,7 +1729,7 @@ can clone it and customise it.</p>
 SyntaxError: '(' was never closed</code></pre>
 </div>
 </div>
-<div id="nav-tabpanel-2-2" class="tab-pane" aria-labelledby="nav-tab-2-2" role="tabpanel">
+<div id="nav-tabpanel-2-2" class="tab-pane" role="tabpanel" aria-labelledby="nav-tab-2-2">
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
@@ -1715,46 +1748,60 @@ can fix it ourselves! We wouldn’t know that if it weren’t for a
 descriptive commit message.</p>
 <p>Now, there are two things we could do:</p>
 <ol style="list-style-type: decimal">
-<li>Revert back to the previous commit. After all, version control would
-not be useful if we could not go back to a previous, working version of
-our code.</li>
+<li>Go back to the previous commit to inspect the working version of the
+code.<br>
+</li>
 <li>Fix the code ourselves and commit the changes.</li>
 </ol>
-<p>There are multiple ways to revert changes in Git. Here, we will use
-the <code>git reset</code> command:</p>
+<p>There are multiple ways to move between commits in Git. Here, we will
+use the <code>git checkout</code> command:</p>
 <div class="codewrapper sourceCode" id="cb5">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" tabindex="-1"></a><span class="fu">git</span> reset <span class="at">--soft</span> HEAD~1</span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" tabindex="-1"></a><span class="fu">git</span> checkout HEAD~1</span>
+<span id="cb5-2"><a href="#cb5-2" tabindex="-1"></a></span>
+<span id="cb5-3"><a href="#cb5-3" tabindex="-1"></a><span class="co"># # You could also run the following</span></span>
+<span id="cb5-4"><a href="#cb5-4" tabindex="-1"></a><span class="co"># git checkout 82c8425</span></span></code></pre>
 </div>
-<p>There’s a lot to unpack here. First is the <code>git reset</code>
-command itself. What it does is that it resets the <strong>current
-state</strong> of the repository, also called <code>HEAD</code>, to a
-specified state. In this case, we are resetting to one commit before the
-current state, hence <code>HEAD~1</code>. The <code>--soft</code> flag
-tells the command to undo the commit, but keep the changes in the staged
-area. Let’s run <code>git status</code> to see what it shows:</p>
+<p>This tells Git to “check out” the commit that came just before the
+current one (<code>HEAD~1</code>, or the commit ID
+<code>82c8425</code>). In other words, we’re temporarily moving our
+working directory to the previous commit so we can look at what the code
+was like before it broke. Let’s check the files in our project now —
+you’ll see that the broken code is gone.</p>
+<p>The output message shows that we’re in what Git calls a “detached
+HEAD” state:</p>
 <div class="codewrapper sourceCode" id="cb6">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" tabindex="-1"></a><span class="fu">git</span> status</span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" tabindex="-1"></a><span class="ex">Note:</span> switching to <span class="st">'HEAD~1'</span>.</span>
+<span id="cb6-2"><a href="#cb6-2" tabindex="-1"></a></span>
+<span id="cb6-3"><a href="#cb6-3" tabindex="-1"></a><span class="ex">You</span> are in <span class="st">'detached HEAD'</span> state. You can look around, make experimental</span>
+<span id="cb6-4"><a href="#cb6-4" tabindex="-1"></a><span class="ex">changes</span> and commit them, and you can discard any commits you make in this</span>
+<span id="cb6-5"><a href="#cb6-5" tabindex="-1"></a><span class="ex">state</span> without impacting any branches by switching back to a branch.</span>
+<span id="cb6-6"><a href="#cb6-6" tabindex="-1"></a></span>
+<span id="cb6-7"><a href="#cb6-7" tabindex="-1"></a><span class="ex">If</span> you want to create a new branch to retain commits you create, you may</span>
+<span id="cb6-8"><a href="#cb6-8" tabindex="-1"></a><span class="cf">do</span> <span class="ex">so</span> <span class="er">(</span><span class="ex">now</span> or later<span class="kw">)</span> <span class="ex">by</span> using <span class="at">-c</span> with the switch command. Example:</span>
+<span id="cb6-9"><a href="#cb6-9" tabindex="-1"></a></span>
+<span id="cb6-10"><a href="#cb6-10" tabindex="-1"></a>  <span class="fu">git</span> switch <span class="at">-c</span> <span class="op">&lt;</span>new-branch-name<span class="op">&gt;</span></span>
+<span id="cb6-11"><a href="#cb6-11" tabindex="-1"></a></span>
+<span id="cb6-12"><a href="#cb6-12" tabindex="-1"></a><span class="ex">Or</span> undo this operation with:</span>
+<span id="cb6-13"><a href="#cb6-13" tabindex="-1"></a></span>
+<span id="cb6-14"><a href="#cb6-14" tabindex="-1"></a>  <span class="fu">git</span> switch <span class="at">-</span></span>
+<span id="cb6-15"><a href="#cb6-15" tabindex="-1"></a></span>
+<span id="cb6-16"><a href="#cb6-16" tabindex="-1"></a><span class="ex">Turn</span> off this advice by setting config variable advice.detachedHead to false</span>
+<span id="cb6-17"><a href="#cb6-17" tabindex="-1"></a></span>
+<span id="cb6-18"><a href="#cb6-18" tabindex="-1"></a><span class="ex">HEAD</span> is now at 82c8425 Code is working</span></code></pre>
 </div>
-<pre><code>On branch main
-Your branch is behind 'origin/main' by 1 commit, and can be fast-forwarded.
-  (use "git pull" to update your local branch)
-
-Changes to be committed:
-  (use "git restore --staged &lt;file&gt;..." to unstage)
-        modified:   python_gc_content.py</code></pre>
-<p>The changes from the commit that we reset are staged, but the commit
-itself was undone (you can see with <code>git log</code>). We can see
-exactly what that change was by running <code>git diff --staged</code>,
-which is just like <code>git diff</code> that we learned before, but
-highlights only the changes that are already staged.</p>
-<div class="codewrapper sourceCode" id="cb8">
+<p>This simply means we’re no longer “on” a branch — we’re just viewing
+a past snapshot of the project. From here, we can examine the code or
+even copy the fixed version.</p>
+<p>If you want to see what changed in the broken commit, you can
+use:</p>
+<div class="codewrapper sourceCode" id="cb7">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" tabindex="-1"></a><span class="fu">git</span> diff <span class="at">--staged</span></span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" tabindex="-1"></a><span class="fu">git</span> diff main</span></code></pre>
 </div>
 <div class="tabs">
 <nav><div id="nav-tab-3" class="nav nav-tabs" role="tablist">
@@ -1770,7 +1817,7 @@ highlights only the changes that are already staged.</p>
 </button>
 </div>
 </nav><div id="nav-tabContent-3" class="tab-content">
-<div id="nav-tabpanel-3-1" class="tab-pane show active" aria-labelledby="nav-tab-3-1" role="tabpanel">
+<div id="nav-tabpanel-3-1" class="tab-pane show active" role="tabpanel" aria-labelledby="nav-tab-3-1">
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
@@ -1789,7 +1836,7 @@ if __name__ == "__main__":
    main()</code></pre>
 </div>
 </div>
-<div id="nav-tabpanel-3-2" class="tab-pane" aria-labelledby="nav-tab-3-2" role="tabpanel">
+<div id="nav-tabpanel-3-2" class="tab-pane" role="tabpanel" aria-labelledby="nav-tab-3-2">
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
@@ -1810,23 +1857,18 @@ index abb31f4..e6fe7f0 100644
 </div>
 </div>
 </div>
-<p>We can see that the code broke because, in the previous commit, a
-parenthesis was removed from a line. However, because that change is
-staged, the code remains broken. We can undo the staged change by
-running:</p>
-<div class="codewrapper sourceCode" id="cb11">
+<p>We can see that the code broke because a closing parenthesis was
+removed in the last commit.</p>
+<p>When you’re done inspecting this older version, return to the latest
+state of the project with:</p>
+<div class="codewrapper sourceCode" id="cb10">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb11-1"><a href="#cb11-1" tabindex="-1"></a><span class="fu">git</span> restore <span class="at">--staged</span> <span class="op">&lt;</span>file<span class="op">&gt;</span></span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb10-1"><a href="#cb10-1" tabindex="-1"></a><span class="fu">git</span> checkout main</span></code></pre>
 </div>
-<p>This removes the file from the staging area, but the change is still
-there (you can check it using <code>git status</code>).</p>
-<p>To fully restore the file to its previous state, you can run:</p>
-<div class="codewrapper sourceCode" id="cb12">
-<h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
-</h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb12-1"><a href="#cb12-1" tabindex="-1"></a><span class="fu">git</span> restore <span class="op">&lt;</span>file<span class="op">&gt;</span></span></code></pre>
-</div>
+<p>This brings you back to the most recent commit on your main branch.
+You can now fix the broken code yourself, add your changes, and commit
+them as usual.</p>
 <!-- ::::::::::::::::::::::::::::::::::::: callout
 
 **Git reset alternatives**
@@ -1864,18 +1906,18 @@ running the code again:</p>
 </button>
 </div>
 </nav><div id="nav-tabContent-4" class="tab-content">
-<div id="nav-tabpanel-4-1" class="tab-pane show active" aria-labelledby="nav-tab-4-1" role="tabpanel">
-<div class="codewrapper sourceCode" id="cb13">
+<div id="nav-tabpanel-4-1" class="tab-pane show active" role="tabpanel" aria-labelledby="nav-tab-4-1">
+<div class="codewrapper sourceCode" id="cb11">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb13-1"><a href="#cb13-1" tabindex="-1"></a><span class="ex">python</span> python_gc_content.py example.fasta</span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb11-1"><a href="#cb11-1" tabindex="-1"></a><span class="ex">python</span> python_gc_content.py example.fasta</span></code></pre>
 </div>
 </div>
-<div id="nav-tabpanel-4-2" class="tab-pane" aria-labelledby="nav-tab-4-2" role="tabpanel">
-<div class="codewrapper sourceCode" id="cb14">
+<div id="nav-tabpanel-4-2" class="tab-pane" role="tabpanel" aria-labelledby="nav-tab-4-2">
+<div class="codewrapper sourceCode" id="cb12">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb14-1"><a href="#cb14-1" tabindex="-1"></a><span class="ex">Rscript</span> R_gc_content.R example.fasta</span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb12-1"><a href="#cb12-1" tabindex="-1"></a><span class="ex">Rscript</span> R_gc_content.R example.fasta</span></code></pre>
 </div>
 </div>
 </div>
@@ -1893,10 +1935,10 @@ let’s undo what we did by running <code>git reset</code>. By doing that,
 we moved to a previous commit in time. That means that our local copy is
 <strong>one commit behind the remote</strong>. So, we can go back to the
 broken version simply by running:</p>
-<div class="codewrapper sourceCode" id="cb16">
+<div class="codewrapper sourceCode" id="cb14">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb16-1"><a href="#cb16-1" tabindex="-1"></a><span class="fu">git</span> pull</span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb14-1"><a href="#cb14-1" tabindex="-1"></a><span class="fu">git</span> pull</span></code></pre>
 </div>
 <p>This will sync the remote with the local.</p>
 <div id="challenge1" class="callout challenge">
@@ -1934,18 +1976,18 @@ your hand or put up a green post-it when you are done.</p>
 </button>
 </div>
 </nav><div id="nav-tabContent-5" class="tab-content">
-<div id="nav-tabpanel-5-1" class="tab-pane show active" aria-labelledby="nav-tab-5-1" role="tabpanel">
-<div class="codewrapper sourceCode" id="cb17">
+<div id="nav-tabpanel-5-1" class="tab-pane show active" role="tabpanel" aria-labelledby="nav-tab-5-1">
+<div class="codewrapper sourceCode" id="cb15">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb17-1"><a href="#cb17-1" tabindex="-1"></a><span class="ex">python</span> python_gc_content.py example.fasta</span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb15-1"><a href="#cb15-1" tabindex="-1"></a><span class="ex">python</span> python_gc_content.py example.fasta</span></code></pre>
 </div>
 </div>
-<div id="nav-tabpanel-5-2" class="tab-pane" aria-labelledby="nav-tab-5-2" role="tabpanel">
-<div class="codewrapper sourceCode" id="cb18">
+<div id="nav-tabpanel-5-2" class="tab-pane" role="tabpanel" aria-labelledby="nav-tab-5-2">
+<div class="codewrapper sourceCode" id="cb16">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb18-1"><a href="#cb18-1" tabindex="-1"></a><span class="ex">Rscript</span> R_gc_content.R example.fasta</span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb16-1"><a href="#cb16-1" tabindex="-1"></a><span class="ex">Rscript</span> R_gc_content.R example.fasta</span></code></pre>
 </div>
 </div>
 </div>
@@ -1974,11 +2016,13 @@ code to GitHub, we need our own copy of the code, so we must
 <li>
 <code>git clone</code> copies a remote repository to our local
 repository.</li>
-<li>There are multiple ways to revert to previous changes, one of them
-is <code>git reset</code>.</li>
 <li>
-<code>HEAD</code> indicates the current state of the
-repository.</li>
+<code>git checkout</code> allows us to move between commits – back
+and forth through a repository’s timeline.</li>
+<li>
+<code>HEAD</code> indicates the current state of the repository.
+<code>HEAD~1</code>, <code>HEAD~2</code> refer to one or two commits
+before the current</li>
 <li>We cannot push to a remote repository if we do not have access to
 it.</li>
 </ul>
@@ -1991,7 +2035,7 @@ any links that you are not going to use.
  -->
 </div></section><section id="aio-forking-a-repository"><p>Content from <a href="forking-a-repository.html">Forking a repository</a></p>
 <hr>
-<p>Last updated on 2025-07-14 |
+<p>Last updated on 2025-10-28 |
 
         <a href="https://github.com/melbournebioinformatics/intro-to-git/edit/main/episodes/forking-a-repository.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 <p>Estimated time: <i aria-hidden="true" data-feather="clock"></i> 23 minutes</p>
@@ -2161,9 +2205,13 @@ happens.</p>
 <code>&gt;&gt;&gt;</code> and <code>===</code> to fix the conflict. Make
 sure your name is the first line on the file, and the name of
 contributor, the second one. Your file should look like this:</p>
-<p>```output linenums=“1” - User 1 - User 2</p>
-<p>```</p>
-<p>Click on “Resolve conflicts” and “Commit merge”</p>
+<div class="codewrapper">
+<h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="output" tabindex="0"><code>- User 1
+- User 2</code></pre>
+</div>
+<p>Click on “Resolve conflicts” and “Commit merge”:</p>
 <figure><img src="../fig/PR_resolved_conflict.png" class="figure mx-auto d-block"></figure><p>This will create a new commit on the pull request:</p>
 <figure><img src="../fig/PR_conflict_commit.png" class="figure mx-auto d-block"></figure><p><strong>Don’t merge the pull request just yet!</strong> Let’s finish
 our review first.</p>
@@ -2211,7 +2259,7 @@ any links that you are not going to use.
  -->
 </div></section><section id="aio-tips-and-best-practices"><p>Content from <a href="tips-and-best-practices.html">Tips and best practices</a></p>
 <hr>
-<p>Last updated on 2025-07-14 |
+<p>Last updated on 2025-10-28 |
 
         <a href="https://github.com/melbournebioinformatics/intro-to-git/edit/main/episodes/tips-and-best-practices.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 <p>Estimated time: <i aria-hidden="true" data-feather="clock"></i> 20 minutes</p>
@@ -2279,6 +2327,37 @@ your backups regularly in other to keep track of an evolving code base.
 By using Git, you can rest assured that you will have a cloud backup of
 your code, and you can rely on it in case your local machine stops
 working.</p>
+</div>
+<div class="section level3">
+<h3 id="ignoring-unnecessary-files-with--gitignore">Ignoring unnecessary files with <code>.gitignore</code>
+<a class="anchor" aria-label="anchor" href="#ignoring-unnecessary-files-with--gitignore"></a>
+</h3>
+<p>Another important best practice is to <strong>keep your repository
+clean by using a <code>.gitignore</code> file</strong>.<br>
+This file tells Git which files or folders it should completely ignore —
+meaning they won’t be tracked or committed.</p>
+<p>For example, you might not want to include:</p>
+<ul>
+<li>temporary files (e.g. <code>*.log</code>,
+<code>.DS_Store</code>)<br>
+</li>
+<li>large datasets or binary files<br>
+</li>
+<li>results or plots that can be regenerated<br>
+</li>
+<li>configuration files specific to your computer</li>
+</ul>
+<p>You can create a <code>.gitignore</code> file at the root of your
+repository and list one pattern per line:</p>
+<div class="codewrapper sourceCode" id="cb1">
+<h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" tabindex="-1"></a><span class="co"># Example .gitignore</span></span>
+<span id="cb1-2"><a href="#cb1-2" tabindex="-1"></a><span class="ex">data/</span></span>
+<span id="cb1-3"><a href="#cb1-3" tabindex="-1"></a><span class="ex">results/</span></span>
+<span id="cb1-4"><a href="#cb1-4" tabindex="-1"></a><span class="ex">*.log</span></span>
+<span id="cb1-5"><a href="#cb1-5" tabindex="-1"></a><span class="ex">.DS_Store</span></span></code></pre>
+</div>
 <div id="when-to-commit" class="callout">
 <div class="callout-square">
 <i class="callout-icon" data-feather="bell"></i>
