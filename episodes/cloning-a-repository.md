@@ -103,35 +103,52 @@ Apparently, the last commit purposefully breaks the code so that we can fix it o
 
 Now, there are two things we could do:
 
-1. Revert back to the previous commit. After all, version control would not be useful if we could not go back to a previous, working version of our code.
+1. Go back to the previous commit to inspect the working version of the code.  
 2. Fix the code ourselves and commit the changes.
 
-There are multiple ways to revert changes in Git. Here, we will use the `git reset` command:
+There are multiple ways to move between commits in Git. Here, we will use the `git checkout` command:
 
 ```bash
-git reset --soft HEAD~1
+git checkout HEAD~1
+
+# # You could also run the following
+# git checkout 82c8425
 ```
 
-There's a lot to unpack here. First is the `git reset` command itself. What it does is that it resets the **current state** of the repository, also called `HEAD`, to a specified state. In this case, we are resetting to one commit before the current state, hence `HEAD~1`. The `--soft` flag tells the command to undo the commit, but keep the changes in the staged area. Let's run `git status` to see what it shows:
+This tells Git to “check out” the commit that came just before the current one (`HEAD~1`, or the commit ID `82c8425`).
+In other words, we’re temporarily moving our working directory to the previous commit so we can look at what the code was like before it broke. Let’s check the files in our project now — you’ll see that the broken code is gone.
+
+The output message shows that we’re in what Git calls a "detached HEAD" state:
 
 ```bash
-git status
+Note: switching to 'HEAD~1'.
+
+You are in 'detached HEAD' state. You can look around, make experimental
+changes and commit them, and you can discard any commits you make in this
+state without impacting any branches by switching back to a branch.
+
+If you want to create a new branch to retain commits you create, you may
+do so (now or later) by using -c with the switch command. Example:
+
+  git switch -c <new-branch-name>
+
+Or undo this operation with:
+
+  git switch -
+
+Turn off this advice by setting config variable advice.detachedHead to false
+
+HEAD is now at 82c8425 Code is working
 ```
 
-```
-On branch main
-Your branch is behind 'origin/main' by 1 commit, and can be fast-forwarded.
-  (use "git pull" to update your local branch)
+This simply means we’re no longer “on” a branch — we’re just viewing a past snapshot of the project.
+From here, we can examine the code or even copy the fixed version.
 
-Changes to be committed:
-  (use "git restore --staged <file>..." to unstage)
-        modified:   python_gc_content.py
-```
+If you want to see what changed in the broken commit, you can use:
 
-The changes from the commit that we reset are staged, but the commit itself was undone (you can see with `git log`). We can see exactly what that change was by running `git diff --staged`, which is just like `git diff` that we learned before, but highlights only the changes that are already staged.
 
 ```bash
-git diff --staged
+git diff main
 ```
 
 ::::::::::::::::::::::::::::::::::::: tab
@@ -174,19 +191,16 @@ index abb31f4..e6fe7f0 100644
 
 :::::::::::::::::::::::::::::::::::::
 
-We can see that the code broke because, in the previous commit, a parenthesis was removed from a line. However, because that change is staged, the code remains broken. We can undo the staged change by running:
+We can see that the code broke because a closing parenthesis was removed in the last commit.
+
+When you’re done inspecting this older version, return to the latest state of the project with:
 
 ```bash
-git restore --staged <file>
+git checkout main
 ```
 
-This removes the file from the staging area, but the change is still there (you can check it using `git status`).
-
-To fully restore the file to its previous state, you can run:
-
-```bash
-git restore <file>
-```
+This brings you back to the most recent commit on your main branch.
+You can now fix the broken code yourself, add your changes, and commit them as usual.
 
 <!-- ::::::::::::::::::::::::::::::::::::: callout 
 
@@ -279,8 +293,8 @@ Because the repository that we cloned is under Melbourne Bioinformatics, we don'
 ::::::::::::::::::::::::::::::::::::: keypoints 
 
 - `git clone` copies a remote repository to our local repository.
-- There are multiple ways to revert to previous changes, one of them is `git reset`.
-- `HEAD` indicates the current state of the repository.
+- `git checkout` allows us to move between commits – back and forth through a repository's timeline.
+- `HEAD` indicates the current state of the repository. `HEAD~1`, `HEAD~2` refer to one or two commits before the current
 - We cannot push to a remote repository if we do not have access to it.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
